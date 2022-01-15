@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+
+
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.0in}
+\setlength{\parskip}{0.15in}
+\setlength{\oddsidemargin}{-0.1in}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{Math 2311  - Assignment 1}\\
+Due: Wed., Jan. 26th
+\end{center}
+
+{\bf Note:} You may work alone or in pairs on the assignment. If you work in a pair, hand in one assignment with both names on it. If you work in a pair, you should still be able to explain your answer to every question on the assignment. 
+
+
+\begin{enumerate}
+
+
+\item
+Determine if each of the following sets is a vector space.  If it is, write a convincing argument to show that it is (verify all of the axioms, or briefly explain why you only need to verify a small number of them); if it is not a vector space demonstrate at least one of the axioms that fails.
+\begin{enumerate}
+\item \DS{ \left\{ \left[ \begin{array}{c}
+x \\
+y
+\end{array} \right] \in \mathbb{R}^2 \ | \ x \geq y \right\}} with the usual scalar multiplication and vector addition from $\mathbb{R}^2$
+\item \DS{ \left\{f \in F(-\infty, \infty) \ | f(1) = 0 \right\}} with the usual scalar multiplication and vector addition from $F(-\infty, \infty)$
+\end{enumerate}
+
+\item
+Let $V$ be a vector space.  
+\begin{enumerate}
+\item If $k$ is any scalar, prove that $k\vec{0} = \vec{0}$.
+\item Prove that the zero vector in $V$ is unique. (Hint: assume that there are two different ``zero vectors'' and show that they must be equal to each other.)
+\end{enumerate}
+
+
+\item
+Determine if each of the following are subspaces of $M_{nn}$
+\begin{enumerate}
+\item \DS{ \left\{A \in M_{nn} \ | det(A) = 0 \right\}}
+\item \DS{ \left\{A \in M_{nn} \ | tr(A) = 0 \right\}} Note: $tr(A)$ is the \emph{trace} of $A$ and is equal to the sum of the diagonal entries of $A$, see section 1.3 of the text. In particular, you may use the results of questions 35 and TF question (j) from section 1.3 (11th or 12th edition). 
+\item \DS{ \left\{A \in M_{nn} \ | A^T = A \right\}} In other words, the symmetric matrices. Theorem 1.4.8 from section 1.4 may be of use. 
+\end{enumerate}
+
+\item Consider the following vectors in $P_2$: $p_1 = 2 + x + 4x^2$, $p_2 = 1 - x + 3x^2$, $p_3 = 3 + 2x + 5x^2$.
+\begin{enumerate}
+\item Express the vector $g = 6 + 11x + 6x^2$ as a linear combination of $p_1,p_2,p_3$.
+\item Does $\{p_1,p_2,p_3\}$ span $P_2$?
+\item Is $\{p_1,p_2,p_3\}$ linearly independent?
+\end{enumerate}
+
+
+%\item
+%Consider the following matrix
+%$$
+%A = \left[ \begin{array}{cccc}
+%1 & 1 & 1 & 1 \\
+%1 & 2 & 1 & 4 \\
+%2 & 3 & 2 & 6 \\
+%2 & 4 & 2 & 9
+%\end{array} \right]
+%$$
+%\begin{enumerate}
+%\item Find all solutions to the equation $A\vec{x} = \vec{0}$.
+%\item Show that the set of all solutions from (a) is a subspace of $\mathbb{R}^4$.
+%\item Let $A$ be any $m \times n$ matrix.  Show that the set of solutions to the equation $A\vec{x} = \vec{0}$ is a subspace of $\mathbb{R}^n$.
+%\end{enumerate}
+
+\item Consider the following planes in $\mathbb{R}^3$. $P_1: 2x + 3y - z = 0$ and $P_2: x + 2y - 2z = 0$
+\begin{enumerate}
+\item Find a set of vectors that spans $P_1$.
+\item Find a set of vectors that spans $P_2$.
+\item Find a set of vectors that spans the intersection of $P_1$ and $P_2$. (Recall that we showed the intersection of two subspaces is a subspace).
+\end{enumerate}
+
+%\item Show that the functions $f_1(x) = e^x$, $f_2(x) = xe^x$, and $f_3(x) = x^2e^x$ are linearly independent in $C^{\infty}(-\infty, \infty)$.
+
+
+\end{enumerate}
+\end{document}
