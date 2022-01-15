@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+
+
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.0in}
+\setlength{\parskip}{0.15in}
+\setlength{\oddsidemargin}{-0.1in}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+        \textbf{Examples similar to some Questions on Assignment 1}\\
+\end{center}
+
+{\bf Note:} The goal of this document is to provide some guidance regarding what a complete solution to an assignment question might look like, as well as providing an example of a .tex file for those of you who have decided to type your assignments in \LaTeX. I will post both the .tex source file as well as the compiled .pdf file for you to look at.
+
+\begin{enumerate}
+        \item Consider the set $W = \{f \in F(-\infty, \infty) \ | f(x) = f(-x) \ \textrm{for all} \ x \}$ with the usual scalar multiplication and vector addition from $F(-\infty, \infty)$. Is $W$ a vector space?
+              \paragraph{Answer:} Yes, $W$ is a vector space.
+              \begin{proof}
+                      Since we know that $F(-\infty, \infty)$ (with the usual operations) is a vector space, and since $W$ is a subset of $F(-\infty, \infty)$ (with the same operations), it suffices to prove that $W$ is a subspace of $F(-\infty, \infty)$. To this end we must show three things:
+                      \begin{enumerate}
+                              \item That $W$ is non-empty.
+                              \item That $W$ is closed under addition.
+                              \item That $W$ is closed under scalar multiplication.
+                      \end{enumerate}
+                      Consider the function $f$ defined by $f(x) = $ for all $x$. Then clearly $f(x) = f(-x)$ for all $x$ (as both sides are equal to 0), so this $f$ is in $W$, and $W$ is non-empty. (Note: this $f$ is the zero vector from $F(-\infty, \infty)$).
+
+                      Now suppose $f$ and $g$ are two functions in $W$. We must show that $f+g$ is in $W$. Now, for all $x$ we have
+                      $$
+                              (f+g)(x) = f(x) + g(x) = f(-x) + g(-x) = (f+g)(-x)
+                      $$
+                      so $f+g$ is in W (Note: the second equality above holds because $f$ and $g$ are in $W$, while the first and third equality are the definition of addition in $F(-\infty, \infty)$).
+                      Alternatively here we could have written:
+                      \begin{align*}
+                              (f+g)(x) & = f(x) + g(x)   & \textrm{(definition of addition of functions)} \\
+                                       & = f(-x) + g(-x) & \textrm{(as $f$ and $g$ are in $W$)}           \\
+                                       & = (f+g)(-x)     & \textrm{(definition of addition of functions)}
+                      \end{align*}
+                      ({\bf Note:} Normally you would not include both of the above in your solution, I have done it here as a further example of some of the things you can do in \LaTeX.)
+
+                      Finally, to show that $W$ is closed under scalar multiplication, suppose $f$ is in $W$ and $k$ is a scalar, then
+                      $$
+                              (kf)(x) = kf(x) = kf(-x) = (kf(-x),
+                      $$
+                      so $(kf)$ is in $W$ and $W$ is closed under scalar multiplication.
+
+                      Therefore $W$ is a subspace of $F(-\infty, \infty)$ and hence is a vector space.
+              \end{proof}
+
+              \newpage
+
+        \item
+              Let $V$ be a vector space and $\vec{v}$ be a vector in $V$. Prove that the negative of $\vec{v}$ is unique.
+              \begin{proof}
+                      We must show that there is only one vector, $\vec{u}$, with the property that \\
+                      $\vec{u} + \vec{v} = \vec{v} + \vec{u} = \vec{0}$. To this end, we will assume that there are 2 such vectors and then show that the two vectors must in fact be equal to each other (i.e. the same vector).
+
+                      Suppose $\vec{u_1}$ and $\vec{u_2}$ are both negatives (also known as additive inverses) of $\vec{v}$. Then
+                      \begin{align*}
+                              \vec{u_2} & = \vec{0} + \vec{u_2}                & \textrm{(vector space axiom 4)}                         \\
+                                        & = (\vec{u_1} + \vec{v}) +  \vec{u_2} & \textrm{(since $\vec{u_1}$ is a negative of $\vec{v}$)} \\
+                                        & = \vec{u_1} + (\vec{v} +  \vec{u_2}) & \textrm{(vector space axiom 3)}                         \\
+                                        & = \vec{u_1} + \vec{0}                & \textrm{(since $\vec{u_2}$ is a negative of $\vec{v}$)} \\
+                                        & = \vec{u_1}                          & \textrm{(vector space axiom 4)}.
+                      \end{align*}
+                      Since we have shown that any two negatives must be equal to each other, we can conclude that the negative of $\vec{v}$ is unique.
+              \end{proof}
+
+
+\end{enumerate}
+\end{document}
