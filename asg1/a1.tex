@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.0in}
+\setlength{\parskip}{0.15in}
+\setlength{\oddsidemargin}{-0.1in}
+
+\newcommand{\DS} [1] {${\displaystyle #1}$}
+
+\author{Michael Walker}
+\title{Math 2311 $-$ Assignment 1}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+        \item
+              Determine if each of the following sets is a vector space.
+              \begin{enumerate}
+                      \item $V=$\DS{ \left\{ \left[ \begin{array}{c}
+                                                    x \\
+                                                    y
+                                            \end{array} \right] \in\mathbb{R}^2 \ | \ x \geq{y} \right\}} with the usual scalar multiplication and vector addition from $\mathbb{R}^2$
+              \end{enumerate}
+              \paragraph{Answer:} No, $V$ is not a vector space.
+              \begin{proof}
+                      let $({x_0}, {y_0}){^T}, ({x_1}, {y_1}){^T} \in V$,
+                      and take the vector space operations on $V$ to be the usual operations of $vector$ addition and $scalar$ multiplication; that is,
+                      \begin{align}
+                              ({x_0}, {y_0}){^T}+ & ({x_1}, {y_1}){^T} =({x_0}+{x_1}, {y_0}+{y_1}){^T} \\
+                                                  & k({x_0}, {y_0}){^T} = ({kx_0}, {ky_0}){^T}
+                      \end{align}
+                      $V$ is closed under scalar addition since ${x_0 + x_1} \ge {y_0 + y_1}$ \\\\
+                      However, by properties of inequalities if the constant, k, is negative, we must reverse the symbol to preserve the inequality relation.
+                      \begin{center}
+                              Given that k is negative,\\
+                              ${x\geq y} \rightarrow {kx\leq ky}$
+                      \end{center}
+              \end{proof}
+              \begin{enumerate}
+                      \item[(b)] Consider the set $W = \{f \in F(-\infty, \infty) \ | f(1) = 0\}$ with the usual scalar multiplication and vector addition from $F(-\infty, \infty)$. Is $W$ a vector space?
+              \end{enumerate}
+              \paragraph{Answer:} Yes, $W$ is a vector space.
+              \begin{proof}
+                      Since we know that $F(-\infty, \infty)$ (with the usual operations) is a vector space, and since $W$ is a subset of $F(-\infty, \infty)$ (with the same operations), it suffices to prove that $W$ is a subspace of $F(-\infty, \infty)$. To this end we must show three things:
+                      \begin{enumerate}
+                              \item That $W$ is non-empty.
+                              \item That $W$ is closed under addition.
+                              \item That $W$ is closed under scalar multiplication.
+                      \end{enumerate}
+                      Consider the zero function $\mathbf{0}$ defined by $\mathbf{0}(x)=0$ for all $x$. Then clearly $\mathbf{0}(1)=f(1)=0$ so $W$ is non-empty.
+
+                      Now suppose $f$ and $g$ are two functions in $W$. We must show that $f+g$ is in $W$.
+                      \begin{align*}
+                              (f+g)(1) & = f(1) + g(1) & \textrm{(definition of addition of functions)} \\
+                                       & = 0           & \textrm{($f$ and $g$ are in $W$)}              \\
+                      \end{align*}
+                      Finally, to show that $W$ is closed under scalar multiplication, suppose $f$ is in $W$ and $k$ is a scalar, then
+                      \begin{align*}
+                              (kf)(1) & = kf(1) & \textrm{(definition of scalar multiplication on functions)} \\
+                                      & = 0     & \textrm{($f$ is in $W$)}                                    \\
+                      \end{align*}
+                      so $(kf)$ is in $W$ and $W$ is closed under scalar multiplication.
+
+                      Therefore $W$ is a subspace of $F(-\infty, \infty)$ and hence is a vector space.
+              \end{proof}
+
+\end{enumerate}
+\end{document}
