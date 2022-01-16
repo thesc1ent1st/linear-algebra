@@ -86,11 +86,11 @@
               \end{enumerate}
               \begin{proof}
                       \begin{align*}
-                              k\vec{0}                 & = \vec{0}                             & \textrm{(hypothesis)}           \\
                               k(\vec{0} + \vec{u})     & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 7)} \\
                               k\vec{u}                 & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 4)} \\
-                              k(\vec{u}) + (-k\vec{u}) & = (k\vec{0} + k\vec{u}) + (-k\vec{u}) & \textrm{(vector space axiom 5)} \\
-                              \vec{0}                  & = (k\vec{0} + k\vec{u}) + (-k\vec{u}) & \textrm{(vector space axiom 5)} \\
+                              k(\vec{u}) + (-k\vec{u}) & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
+                              \vec{0}                  & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
+                                                       & = (k\vec{0} + k\vec{u}) + (-k\vec{u}) & \textrm{(vector space axiom 2)} \\
                                                        & = k\vec{0} + (k\vec{u} + (-k\vec{u})) & \textrm{(vector space axiom 3)} \\
                                                        & = k\vec{0} + \vec{0}                  & \textrm{(vector space axiom 5)} \\
                                                        & = k\vec{0}                            & \textrm{(vector space axiom 4)} \\
@@ -101,18 +101,17 @@
               \end{enumerate}
               \begin{proof}
                       We must show that there is only one vector, $\vec{0}$, with the property that \\
-                      $\vec{0} + \vec{u} = \vec{u} + \vec{0} = \vec{u}$. To this end,
-                      we will assume that there are 2 such vectors and then show that the two vectors
-                      must in fact be equal to each other (i.e. the same vector).
+                      $\vec{0} + \vec{v} = \vec{v} + \vec{0} = \vec{v}$.
 
-                      Suppose $\vec{u}$ and $\vec{0}$ are both zero (also known as additive identities) of $\vec{v}$. Then
+                      Suppose $\vec{0_1}$ and $\vec{0}$ are both zero (also known as additive identities) of $\vec{v}$. Then
                       \begin{align*}
-                              \vec{u} + \vec{v}                & = \vec{v}             & \textrm{(vector space axiom 4)} \\
-                              (\vec{u} + \vec{v}) + (-\vec{v}) & = \vec{v} +(-\vec{v}) & \textrm{(vector space axiom 5)} \\
-                                                               & = \vec{0}             & \textrm{(vector space axiom 5)} \\
-                              \vec{u} + (\vec{v} + (-\vec{v})) & =                     & \textrm{(vector space axiom 3)} \\
-                              \vec{u} + \vec{0}                & =                     & \textrm{(vector space axiom 5)} \\
-                              \vec{u}                          & = \vec{0}             & \textrm{(vector space axiom 4)}
+                              \vec{v}             & = \vec{0_1} + \vec{v}                & \textrm{(vector space axiom 4)} \\
+                              \vec{v} +(-\vec{v}) & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
+                              \vec{0}             & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
+                                                  & = (\vec{0_1} + \vec{v}) + (-\vec{v}) & \textrm{(vector space axiom 2)} \\
+                                                  & = \vec{0_1} + (\vec{v} + (-\vec{v})) & \textrm{(vector space axiom 3)} \\
+                                                  & = \vec{0_1} + \vec{0}                & \textrm{(vector space axiom 5)} \\
+                                                  & = \vec{0_1}                          & \textrm{(vector space axiom 4)}
                       \end{align*}
                       Since we have shown that any two zero vectors must be equal to each other,
                       we can conclude that $\vec{0}$ is unique.
