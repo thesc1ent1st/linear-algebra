@@ -62,7 +62,8 @@
                               \item That $W$ is closed under addition.
                               \item That $W$ is closed under scalar multiplication.
                       \end{enumerate}
-                      There exists a function $\mathbf{0}$ in $F(-\infty, \infty)$ defined by $\mathbf{0}(x)=0$ for all $x$.
+                      There exists a function $\mathbf{0}$ in $F(-\infty, \infty)$
+                      defined by $\mathbf{0}(x)=0$ for all $x$.
                       Clearly $\mathbf{0}(1)=f(1)=0$ so $W$ is non-empty.
 
                       Now suppose $f$ and $g$ are two functions in $W$. We must show that $f+g$ is in $W$.
@@ -70,7 +71,8 @@
                               (f+g)(1) & = f(1) + g(1) & \textrm{(definition of addition of functions)} \\
                                        & = 0           & \textrm{($f$ and $g$ are in $W$)}
                       \end{align*}
-                      Finally, to show that $W$ is closed under scalar multiplication, suppose $f$ is in $W$ and $k$ is a scalar, then
+                      Finally, to show that $W$ is closed under scalar multiplication,
+                      suppose $f$ is in $W$ and $k$ is a scalar, then
                       \begin{align*}
                               (kf)(1) & = kf(1) & \textrm{(definition of scalar multiplication on functions)} \\
                                       & = 0     & \textrm{($f$ is in $W$)}
@@ -129,7 +131,6 @@
                             \paragraph{Answer:} No, ${ \left\{A \in M_{nn} \
                                                     | \det (A) = 0 \right\}}$ is not a subspace of $M_{nn}$.
                             \begin{proof}
-                                    $\det(A+B) \neq \det (A)+\det (B)$
                                     \begin{equation*}
                                             \det
                                             \begin{vmatrix}
@@ -176,7 +177,7 @@
                                     Let [$B = ({b_{ii}})]\in W$ such that $tr(B)=0$ and let ${k}$ be any skalar\\\\
                                     The set $W$ is non empty because, if we let ${a_{ii}=0}$
                                     for all i then $tr(A)=0$ therefore $W$ contains the $\mathbf{0}$ matrices.
-                                    It remains to show that W is closed under addition and scalar multiplication
+                                    It remains to show that W is closed under addition and scalar multiplication.
                                     \begin{align*}
                                             tr(A+B) & = \sum_{i = 1}^{n}(a_{ii}+b_{ii})                 \\
                                                     & = \sum_{i = 1}^{n}a_{ii} + \sum_{i = 1}^{n}b_{ii} \\
@@ -193,17 +194,27 @@
                                     \end{align*}
                                     To be clear, if we take some $C = A+B$ such that A and B are in $W$,
                                     then for all $C = (c_{ii})$, the sum will be $0$, so $C$ is also in $W$.
+                                    Therefore $W$ is a subspace of $M_{nn}$
                             \end{proof}
                       \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in{M_{nn}} \ |
                                     A^T = A \right\}}$ is a subspace of $M_{nn}$.
                             \begin{proof}
-                                    Let $[B = (b_{ij})]\in W$ be a square matrix of order $n$ such that $b_{ij} = b_{ji}$, and let ${k}$ be any skalar\\\\
-                                    The set $W$ is non empty because, if we let $[A=({a_{ii})]=0}$ for all $i$ then $W$ contains the $\mathbf{0}$ matrices.
-                                    It remains to show that $W$ is closed under addition and scalar multiplication\\\\
-                                    $C = (A+B)^T = A^T+B^T = A + B$ is in $W$,
-                                    and $(k\cdot A)T = k\cdot AT = k\cdot A$ is also in $W$.
-                                    Therefore $W$ is non-empty and closed under addition and scalar multiplication.
+                                    Let $[B = (b_{ij})]\in W$ be a square matrix of order $n$
+                                    such that $b_{ij} = b_{ji}$, and let ${k}$ be any skalar\\\\
+                                    The set $W$ is non empty because, if we let $[A=({a_{ij})]=0}$
+                                    for all $(i,j)$ then $W$ contains the $\mathbf{0}$ matrices.
+                                    It remains to show that $W$ is closed under addition and scalar multiplication.
+                                    \begin{align*}
+                                            C & = (A+B)^T \\
+                                              & = A^T+B^T \\
+                                              & = A + B
+                                    \end{align*}
+                                    \begin{align*}
+                                            (k\cdot A)^{T} & = k\cdot A^{T} \\
+                                                           & = k\cdot A
+                                    \end{align*}
+                                    so $W$ is a subspace of $M_{nn}$.
                             \end{proof}
               \end{enumerate}
 \end{enumerate}
