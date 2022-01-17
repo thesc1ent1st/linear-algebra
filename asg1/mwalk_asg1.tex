@@ -174,46 +174,47 @@
                             \paragraph{Answer:} Yes, $W={ \left\{A \in M_{nn} \ |
                                     tr(A) = 0 \right\}}$ is a subspace of $M_{nn}$.
                             \begin{proof}
-                                    Let [$B = ({b_{ii}})]\in W$ such that $tr(B)=0$ and let ${k}$ be any skalar\\\\
-                                    The set $W$ is non empty because, if we let ${a_{ii}=0}$
+                                    Let [$B = ({b_{ii}})]\in W$ be a square matrix of order n such that $tr(B)=0$ and let ${k}$ be any scalar.\\\\
+                                    The set $W$ is non empty because if we let ${a_{ii}=0}$
                                     for all i then $tr(A)=0$ therefore $W$ contains the $\mathbf{0}$ matrices.
                                     It remains to show that W is closed under addition and scalar multiplication.
                                     \begin{align*}
-                                            tr(A+B) & = \sum_{i = 1}^{n}(a_{ii}+b_{ii})                 \\
-                                                    & = \sum_{i = 1}^{n}a_{ii} + \sum_{i = 1}^{n}b_{ii} \\
-                                                    & = tr(A) + tr(B)                                   \\
-                                                    & = 0 + 0                                           \\
-                                                    & = 0.
-                                    \end{align*}
-                                    \begin{align*}
-                                            tr(kA) & = \sum_{i = 1}^{n}(k\cdot a_{ii}) \\
-                                                   & = k\cdot \sum_{i = 1}^{n}a_{ii}   \\
-                                                   & = k\cdot tr(A)                    \\
-                                                   & = k\cdot 0                        \\
-                                                   & = 0
+                                            addition:       &                                                   \\
+                                            tr(A+B)         & = \sum_{i = 1}^{n}(a_{ii}+b_{ii})                 \\
+                                                            & = \sum_{i = 1}^{n}a_{ii} + \sum_{i = 1}^{n}b_{ii} \\
+                                                            & = tr(A) + tr(B)                                   \\
+                                                            & = 0 + 0                                           \\
+                                                            & = 0                                               \\
+                                            multiplication: &                                                   \\
+                                            tr(kA)          & = \sum_{i = 1}^{n}(k\cdot a_{ii})                 \\
+                                                            & = k\cdot \sum_{i = 1}^{n}a_{ii}                   \\
+                                                            & = k\cdot tr(A)                                    \\
+                                                            & = k\cdot 0                                        \\
+                                                            & = 0
                                     \end{align*}
                                     To be clear, if we take some $C = A+B$ such that A and B are in $W$,
                                     then for all $C = (c_{ii})$, the sum will be $0$, so $C$ is also in $W$.
-                                    Therefore $W$ is a subspace of $M_{nn}$
+                                    Therefore $W$ is a subspace of $M_{nn}$.
                             \end{proof}
                       \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in{M_{nn}} \ |
                                     A^T = A \right\}}$ is a subspace of $M_{nn}$.
                             \begin{proof}
                                     Let $[B = (b_{ij})]\in W$ be a square matrix of order $n$
-                                    such that $b_{ij} = b_{ji}$, and let ${k}$ be any skalar\\\\
+                                    such that $b_{ij} = b_{ji}$, and let ${k}$ be any scalar.\\\\
                                     The set $W$ is non empty because, if we let $[A=({a_{ij})]=0}$
                                     for all $(i,j)$ then $W$ contains the $\mathbf{0}$ matrices.
                                     It remains to show that $W$ is closed under addition and scalar multiplication.
                                     \begin{align*}
-                                            C & = (A+B)^T \\
-                                              & = A^T+B^T \\
-                                              & = A + B
+                                            addition:       &                \\
+                                            C               & = (A+B)^T      \\
+                                                            & = A^T+B^T      \\
+                                                            & = A + B        \\
+                                            multiplication: &                \\
+                                            (k\cdot A)^{T}  & = k\cdot A^{T} \\
+                                                            & = k\cdot A
                                     \end{align*}
-                                    \begin{align*}
-                                            (k\cdot A)^{T} & = k\cdot A^{T} \\
-                                                           & = k\cdot A
-                                    \end{align*}
+
                                     so $W$ is a subspace of $M_{nn}$.
                             \end{proof}
               \end{enumerate}
