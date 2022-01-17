@@ -116,5 +116,74 @@
                       Since we have shown that any two zero vectors must be equal to each other,
                       we can conclude that $\vec{0}$ is unique.
               \end{proof}
+        \item Determine if each of the following are subspaces of $M_{nn}$
+              \begin{enumerate}
+                      \item \DS{ \left\{A\in{M_{nn}} \ | det (A) = 0 \right\}}
+                            \paragraph{Answer:} No, ${ \left\{A \in M_{nn} \
+                                                    | \det (A) = 0 \right\}}$ is not a sub space of $M_{nn}$.
+                            \begin{proof}
+                                    $\det(A+B) \neq \det (A)+\det (B)$
+                                    \begin{equation*}
+                                            \det
+                                            \begin{vmatrix}
+                                                    {1} & {0} \\
+                                                    {0} & {0} \\
+                                            \end{vmatrix}
+                                            {= 0},
+                                            \det
+                                            \begin{vmatrix}
+                                                    {0} & {0} \\
+                                                    {0} & {1} \\
+                                            \end{vmatrix}
+                                            = 0
+                                    \end{equation*}
+                                    \begin{equation*}
+                                            \begin{bmatrix}
+                                                    {1} & {0} \\
+                                                    {0} & {0} \\
+                                            \end{bmatrix}
+                                            +
+                                            \begin{bmatrix}
+                                                    {0} & {0} \\
+                                                    {0} & {1} \\
+                                            \end{bmatrix}
+                                            =
+                                            \begin{bmatrix}
+                                                    {1} & {0} \\
+                                                    {0} & {1} \\
+                                            \end{bmatrix}
+                                    \end{equation*}
+                                    \begin{equation*}
+                                            \det
+                                            \begin{vmatrix}
+                                                    {1} & {0} \\
+                                                    {0} & {1} \\
+                                            \end{vmatrix}
+                                            = 2 \neq 0
+                                    \end{equation*}
+                            \end{proof}
+                      \item \DS{ \left\{A \in{M_{nn}} \ | tr (A) = 0 \right\}}
+                            \paragraph{Answer:} Yes, $W={ \left\{A \in M_{nn} \ |
+                                    tr(A) = 0 \right\}}$ is a sub space of $M_{nn}$.
+                            \begin{proof}
+                                    take $B \in W$ and some $scalar\ {k} $\\\\
+                                    $W$ is non empty $tr(A)=0$ so $W$ contains the $\mathbf{0}$ matrix \\\\
+                                    $W$ is closed under addition
+                                    \begin{align*}
+                                            tr(A+B) & = \sum_{i = 1}^{n}(a_{i,i}+b_{i,i})                 \\
+                                                    & = \sum_{i = 1}^{n}a_{i,i} + \sum_{i = 1}^{n}b_{i,i} \\
+                                                    & = tr(A) + tr(B)
+                                    \end{align*}
+                                    $W$ is closed under skalar multiplication
+                                    \begin{align*}
+                                            tr(kA) & = \sum_{i = 1}^{n}(k\cdot a_{i,i}) \\
+                                                   & = k\cdot \sum_{i = 1}^{n}a_{i,i}   \\
+                                                   & = k\cdot tr(A)
+                                    \end{align*}
+                                    $W$ is a subspace of $M_{nn}$
+                            \end{proof}
+                      \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
+                            In other words, the symmetric matrices. Theorem 1.4.8 from section 1.4 may be of use.
+              \end{enumerate}
 \end{enumerate}
 \end{document}
