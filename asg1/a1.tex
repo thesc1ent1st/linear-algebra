@@ -86,14 +86,18 @@
               \end{enumerate}
               \begin{proof}
                       \begin{align*}
-                              k(\vec{0} + \vec{u})     & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 7)} \\
-                              k\vec{u}                 & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 4)} \\
-                              k(\vec{u}) + (-k\vec{u}) & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
-                              \vec{0}                  & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
-                                                       & = (k\vec{0} + k\vec{u}) + (-k\vec{u}) & \textrm{(vector space axiom 2)} \\
-                                                       & = k\vec{0} + (k\vec{u} + (-k\vec{u})) & \textrm{(vector space axiom 3)} \\
-                                                       & = k\vec{0} + \vec{0}                  & \textrm{(vector space axiom 5)} \\
-                                                       & = k\vec{0}                            & \textrm{(vector space axiom 4)} \\
+                              k(\vec{0} + \vec{u})
+                               & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 7)} \\
+                              k\vec{u}
+                               & = k\vec{0} + k\vec{u}                 & \textrm{(vector space axiom 4)} \\
+                              k(\vec{u}) + (-k\vec{u})
+                               & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
+                              \vec{0}
+                               & = (-k\vec{u}) + (k\vec{0} + k\vec{u}) & \textrm{(vector space axiom 5)} \\
+                               & = (k\vec{0} + k\vec{u}) + (-k\vec{u}) & \textrm{(vector space axiom 2)} \\
+                               & = k\vec{0} + (k\vec{u} + (-k\vec{u})) & \textrm{(vector space axiom 3)} \\
+                               & = k\vec{0} + \vec{0}                  & \textrm{(vector space axiom 5)} \\
+                               & = k\vec{0}                            & \textrm{(vector space axiom 4)} \\
                       \end{align*}
               \end{proof}
               \begin{enumerate}
@@ -103,15 +107,18 @@
                       We must show that there is only one vector, $\vec{0}$, with the property that \\
                       $\vec{0} + \vec{v} = \vec{v} + \vec{0} = \vec{v}$.
 
-                      Suppose $\vec{0_1}$ and $\vec{0}$ are both zero (also known as additive identities) of $\vec{v}$. Then
+                      Suppose $\vec{0_1}$ and $\vec{0}$ are both zero of $\vec{v}$. Then
                       \begin{align*}
-                              \vec{v}             & = \vec{0_1} + \vec{v}                & \textrm{(vector space axiom 4)} \\
-                              \vec{v} +(-\vec{v}) & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
-                              \vec{0}             & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
-                                                  & = (\vec{0_1} + \vec{v}) + (-\vec{v}) & \textrm{(vector space axiom 2)} \\
-                                                  & = \vec{0_1} + (\vec{v} + (-\vec{v})) & \textrm{(vector space axiom 3)} \\
-                                                  & = \vec{0_1} + \vec{0}                & \textrm{(vector space axiom 5)} \\
-                                                  & = \vec{0_1}                          & \textrm{(vector space axiom 4)}
+                              \vec{v}
+                               & = \vec{0_1} + \vec{v}                & \textrm{(vector space axiom 4)} \\
+                              \vec{v} +(-\vec{v})
+                               & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
+                              \vec{0}
+                               & = (-\vec{v}) + (\vec{0_1} + \vec{v}) & \textrm{(vector space axiom 5)} \\
+                               & = (\vec{0_1} + \vec{v}) + (-\vec{v}) & \textrm{(vector space axiom 2)} \\
+                               & = \vec{0_1} + (\vec{v} + (-\vec{v})) & \textrm{(vector space axiom 3)} \\
+                               & = \vec{0_1} + \vec{0}                & \textrm{(vector space axiom 5)} \\
+                               & = \vec{0_1}                          & \textrm{(vector space axiom 4)}
                       \end{align*}
                       Since we have shown that any two zero vectors must be equal to each other,
                       we can conclude that $\vec{0}$ is unique.
@@ -120,7 +127,7 @@
               \begin{enumerate}
                       \item \DS{ \left\{A\in{M_{nn}} \ | det (A) = 0 \right\}}
                             \paragraph{Answer:} No, ${ \left\{A \in M_{nn} \
-                                                    | \det (A) = 0 \right\}}$ is not a sub space of $M_{nn}$.
+                                                    | \det (A) = 0 \right\}}$ is not a sub pace of $M_{nn}$.
                             \begin{proof}
                                     $\det(A+B) \neq \det (A)+\det (B)$
                                     \begin{equation*}
@@ -164,26 +171,40 @@
                             \end{proof}
                       \item \DS{ \left\{A \in{M_{nn}} \ | tr (A) = 0 \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in M_{nn} \ |
-                                    tr(A) = 0 \right\}}$ is a sub space of $M_{nn}$.
+                                    tr(A) = 0 \right\}}$ is a subspace of $M_{nn}$.
                             \begin{proof}
-                                    take $B \in W$ and some $scalar\ {k} $\\\\
-                                    $W$ is non empty $tr(A)=0$ so $W$ contains the $\mathbf{0}$ matrix \\\\
-                                    $W$ is closed under addition
+                                    Let [$B = ({b_{ii}})]\in W$ such that $tr(B)=0$ and let ${k}$ be any skalar\\\\
+                                    The set $W$ is non empty because, if we let ${a_{ii}=0}$
+                                    for all i then $tr(A)=0$ therefore $W$ contains the $\mathbf{0}$ matrices.
+                                    It remains to show that W is closed under addition and scalar multiplication
                                     \begin{align*}
-                                            tr(A+B) & = \sum_{i = 1}^{n}(a_{i,i}+b_{i,i})                 \\
-                                                    & = \sum_{i = 1}^{n}a_{i,i} + \sum_{i = 1}^{n}b_{i,i} \\
-                                                    & = tr(A) + tr(B)
+                                            tr(A+B) & = \sum_{i = 1}^{n}(a_{ii}+b_{ii})                 \\
+                                                    & = \sum_{i = 1}^{n}a_{ii} + \sum_{i = 1}^{n}b_{ii} \\
+                                                    & = tr(A) + tr(B)                                   \\
+                                                    & = 0 + 0                                           \\
+                                                    & = 0.
                                     \end{align*}
-                                    $W$ is closed under skalar multiplication
                                     \begin{align*}
-                                            tr(kA) & = \sum_{i = 1}^{n}(k\cdot a_{i,i}) \\
-                                                   & = k\cdot \sum_{i = 1}^{n}a_{i,i}   \\
-                                                   & = k\cdot tr(A)
+                                            tr(kA) & = \sum_{i = 1}^{n}(k\cdot a_{ii}) \\
+                                                   & = k\cdot \sum_{i = 1}^{n}a_{ii}   \\
+                                                   & = k\cdot tr(A)                    \\
+                                                   & = k\cdot 0                        \\
+                                                   & = 0
                                     \end{align*}
-                                    $W$ is a subspace of $M_{nn}$
+                                    To be clear, if we take some $C = A+B$ such that A and B are in $W$,
+                                    then for all $C = (c_{ii})$, the sum will be $0$, so $C$ is also in $W$.
                             \end{proof}
                       \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
-                            In other words, the symmetric matrices. Theorem 1.4.8 from section 1.4 may be of use.
+                            \paragraph{Answer:} Yes, $W={ \left\{A \in{M_{nn}} \ |
+                                    A^T = A \right\}}$ is a subspace of $M_{nn}$.
+                            \begin{proof}
+                                    Let $[B = (b_{ij})]\in W$ be a square matrix of order $n$ such that $b_{ij} = b_{ji}$, and let ${k}$ be any skalar\\\\
+                                    The set $W$ is non empty because, if we let $[A=({a_{ii})]=0}$ for all $i$ then $W$ contains the $\mathbf{0}$ matrices.
+                                    It remains to show that $W$ is closed under addition and scalar multiplication\\\\
+                                    By definition $C = (A+B)^T = A^T+B^T = A + B$ is in $W$,
+                                    and $(k\cdot A)T = k\cdot AT = k\cdot A$ is also in $W$.
+                                    Therefore $W$ is non-empty and closed under addition and scalar multiplication.
+                            \end{proof}
               \end{enumerate}
 \end{enumerate}
 \end{document}
