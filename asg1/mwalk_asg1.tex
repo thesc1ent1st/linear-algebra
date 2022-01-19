@@ -204,5 +204,75 @@
                                     so $W$ is a subspace of $M_{nn}$.
                             \end{proof}
               \end{enumerate}
+
+        \item Consider the following vectors in $P_2$: $p_1 = 2 + x + 4x^2$, $p_2 = 1 - x + 3x^2$, $p_3 = 3 + 2x + 5x^2$.
+              \begin{enumerate}
+                      \item Express the vector $g = 6 + 11x + 6x^2$ as a linear combination of $p_1,p_2,p_3$.
+                            \paragraph{Answer: $(p_1,p_2,p_3)$ = (4, -5, 1)}
+                            \begin{proof}
+                                    \begin{align*}
+                                            (6 + 11x + 6x^2) & =  k_{0}(2 + x + 4x^2) +  k_{1}(1 - x + 3x^2) +  k_{2}(3 + 2x + 5x^2)                                \\
+                                                             & =  (k_{0}2 + k_{1} + k_{2}3)  +  (k_{0}x - k_{1}x + k_{2}2x)  +  (k_{0}4x^2 + k_{1}3x^2 + k_{2}5x^2) \\
+                                                             & =  (k_{0}2 + k_{1} + k_{2}3)  +  (k_{0} - k_{1} + k_{2}2)x    +  (k_{0}4 + k_{1}3 + k_{2}5)x^2
+                                    \end{align*}
+                                    \begin{align*}
+                                            \begin{bmatrix}
+                                                    2 & 1  & 3 & \bigm| & 6  \\
+                                                    1 & -1 & 2 & \bigm| & 11 \\
+                                                    4 & 3  & 5 & \bigm| & 6  \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix}
+                                                    0 & 3  & -1 & \bigm| & -16 \\
+                                                    1 & -1 & 2  & \bigm| & 11  \\
+                                                    0 & 7  & -3 & \bigm| & -38 \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix}
+                                                    1 & -1 & 2  & \bigm| & 11  \\
+                                                    0 & 3  & -1 & \bigm| & -16 \\
+                                                    0 & 7  & -3 & \bigm| & -38 \\
+                                            \end{bmatrix}
+                                             &
+                                            \\
+                                            \begin{bmatrix}
+                                                    1 & -1 & 2            & \bigm| & 11            \\
+                                                    0 & 1  & \frac{-1}{3} & \bigm| & \frac{-16}{3} \\
+                                                    0 & 7  & -3           & \bigm| & -38           \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix}
+                                                    1 & -1 & 2            & \bigm| & 11            \\
+                                                    0 & 1  & \frac{-1}{3} & \bigm| & \frac{-16}{3} \\
+                                                    0 & 0  & \frac{-2}{3} & \bigm| & \frac{-2}{3}  \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix}
+                                                    1 & -1 & 2 & \bigm| & 11 \\
+                                                    0 & 1  & 0 & \bigm| & -5 \\
+                                                    0 & 0  & 1 & \bigm| & 1  \\
+                                            \end{bmatrix}
+                                             &
+                                            \\
+                                            \begin{bmatrix}
+                                                    1 & 0 & 2 & \bigm| & 6  \\
+                                                    0 & 1 & 0 & \bigm| & -5 \\
+                                                    0 & 0 & 1 & \bigm| & 1  \\
+                                            \end{bmatrix}
+                                            \begin{bmatrix}
+                                                    1 & 0 & 0 & \bigm| & 4  \\
+                                                    0 & 1 & 0 & \bigm| & -5 \\
+                                                    0 & 0 & 1 & \bigm| & 1  \\
+                                            \end{bmatrix}
+                                             &
+                                    \end{align*}
+                                    \begin{equation*}
+                                            \therefore (k_{1}, k_{2}, k_{3}) = (4, -5, 1) \\
+                                    \end{equation*}
+                            \end{proof}
+                      \item Does $\{p_1,p_2,p_3\}$ span $P_2$?
+                      \item Is $\{p_1,p_2,p_3\}$ linearly independent?
+                            \paragraph{Answer: Yes}
+                            \begin{proof}
+                                    Let $g = 0 + 0x + 0x^2$ then $[p1 | p2 | p3]\vec{x} = \vec{0}$ gives the trivial solution, 
+                                    therefore $\{p_1,p_2,p_3\}$ spans $p_{2}$ and $\{p_1,p_2,p_3\}$ is linearly independent.
+                            \end{proof}
+              \end{enumerate}
 \end{enumerate}
 \end{document}
