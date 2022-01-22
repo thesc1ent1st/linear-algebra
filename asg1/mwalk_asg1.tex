@@ -6,6 +6,14 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, % set true if you want colored links
+    linktoc=all,     % set to all if you want both sections and subsections linked
+    linkcolor=blue,  % choose some color if you want links to stand out
+}
+
 \setlength{\textheight}{10in}
 \setlength{\textwidth}{6.5in}
 \setlength{\topmargin}{-1.0in}
@@ -20,10 +28,14 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
+\pagebreak
+\section{Question 1}
 \begin{enumerate}
         \item
               Determine if each of the following sets is a vector space.
               \begin{enumerate}
+                      \subsection{Answer: No, $V$ is not a vector space.}
                       \item $V=$\DS{ \left\{ \left[ \begin{array}{c}
                                                     x \\
                                                     y
@@ -31,7 +43,6 @@
                             with the usual scalar multiplication
                             and vector addition from $\mathbb{R}^2$
               \end{enumerate}
-              \paragraph{Answer:} No, $V$ is not a vector space.
               \begin{proof}
                       let $({x_0}, {y_0}), ({x_1}, {y_1}) \in V$,
                       and take the vector space operations on $V$
@@ -49,12 +60,12 @@
               \end{proof}
               \pagebreak
               \begin{enumerate}
+                      \subsection{Answer: Yes, $W$ is a vector space.}
                       \item[(b)] Consider the set $W = \{f \in F(-\infty, \infty) \ | f(1) = 0\}$
                             with the usual scalar multiplication and vector addition from
                             $F(-\infty, \infty)$.
                             Is $W$ a vector space?
               \end{enumerate}
-              \paragraph{Answer:} Yes, $W$ is a vector space.
               \begin{proof}
                       Since we know that $F(-\infty, \infty)$ (with the usual operations) is a vector space,
                       and since $W$ is a subset of $F(-\infty, \infty)$ (with the same operations),
@@ -85,9 +96,10 @@
                       Therefore $W$ is a subspace of $F(-\infty, \infty)$ and hence is a vector space.
               \end{proof}
               \pagebreak
-        \item
-              Let $V$ be a vector space.
+              \section{Question 2}
+        \item Let $V$ be a vector space.
               \begin{enumerate}
+                      \subsection[prove that $k\vec{0} = \vec{0}$]{}
                       \item If $k$ is any scalar, prove that $k\vec{0} = \vec{0}$.
               \end{enumerate}
               \begin{proof}
@@ -101,6 +113,7 @@
                       \end{align*}
               \end{proof}
               \begin{enumerate}
+                      \subsection[Prove that the zero vector in $V$ is unique]{}
                       \item[(b)] Prove that the zero vector in $V$ is unique.
               \end{enumerate}
               \begin{proof}
@@ -115,11 +128,12 @@
                       \end{align*}
                       Therefore $\vec{0_1} = \vec{0}$. So, the zero vector is unique.
               \end{proof}
+              \pagebreak
+              \section{Question 3}
         \item Determine if each of the following are subspaces of $M_{nn}$
               \begin{enumerate}
+                      \subsection{Answer: No, $A \in M_{nn}$ is not a subspace of $M_{nn}$.}
                       \item \DS{ \left\{A\in{M_{nn}} \ | det (A) = 0 \right\}}
-                            \paragraph{Answer:} No, ${ \left\{A \in M_{nn} \
-                                                    | \det (A) = 0 \right\}}$ is not a subspace of $M_{nn}$.
                             \begin{proof}
                                     \begin{equation*}
                                             \det
@@ -159,34 +173,29 @@
                                             \end{vmatrix}
                                             = 1 \neq 0
                                     \end{equation*}
-                            \end{proof}\pagebreak
+                            \end{proof}
+                            \subsection{Answer: Yes, $W$ is a subspace of $M_{nn}$}
                       \item \DS{ \left\{A \in{M_{nn}} \ | tr (A) = 0 \right\}}
-                            \paragraph{Answer:} Yes, $W={ \left\{A \in M_{nn} \ |
-                                    tr(A) = 0 \right\}}$ is a subspace of $M_{nn}$.
                             \begin{proof}
                                     Let [$B = ({b_{ii}})]\in W$ be a square matrix of order n such that $tr(B)=0$ and let ${k}$ be any scalar.\\\\
                                     The set $W$ is non empty because if we let ${a_{ii}=0}$
                                     for all i then $tr(A)=0$ therefore $W$ contains the $\mathbf{0}$ matrices.
-                                    It remains to show that W is closed under addition and scalar multiplication.
                                     \begin{align*}
                                             addition:       &                                                   \\
                                             tr(A+B)         & = \sum_{i = 1}^{n}(a_{ii}+b_{ii})                 \\
                                                             & = \sum_{i = 1}^{n}a_{ii} + \sum_{i = 1}^{n}b_{ii} \\
-                                                            & = tr(A) + tr(B)                                   \\
-                                                            & = 0 + 0                                           \\
-                                                            & = 0                                               \\
+                                                            & = tr(A) + tr(B) = 0 + 0 = 0                       \\
                                             multiplication: &                                                   \\
                                             tr(kA)          & = \sum_{i = 1}^{n}(k\cdot a_{ii})                 \\
                                                             & = k\cdot \sum_{i = 1}^{n}a_{ii}                   \\
-                                                            & = k\cdot tr(A)                                    \\
-                                                            & = k\cdot 0                                        \\
-                                                            & = 0
+                                                            & = k\cdot tr(A) = k\cdot 0 = 0
                                     \end{align*}
                                     To be clear, if we take some $C = A+B$ such that A and B are in $W$,
                                     then for all $C = (c_{ii})$, the sum will be $0$, so $C$ is also in $W$.
                                     Therefore $W$ is a subspace of $M_{nn}$.
                             \end{proof}
                             \pagebreak
+                            \subsection{Answer: Yes, $W$ is a subspace of $M_{nn}$}
                       \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in{M_{nn}} \ |
                                     A^T = A \right\}}$ is a subspace of $M_{nn}$.
@@ -208,11 +217,11 @@
                                     so $W$ is a subspace of $M_{nn}$.
                             \end{proof} \pagebreak
               \end{enumerate}
-
+              \section{Question 4}
+              \subsection{Answer: Yes, $(p_1,p_2,p_3)$ = (4, -5, 1)}
         \item Consider the following vectors in $P_2$: $p_1 = 2 + x + 4x^2$, $p_2 = 1 - x + 3x^2$, $p_3 = 3 + 2x + 5x^2$.
               \begin{enumerate}
                       \item Express the vector $g = 6 + 11x + 6x^2$ as a linear combination of $p_1,p_2,p_3$.
-                            \paragraph{Answer: Yes, $(p_1,p_2,p_3)$ = (4, -5, 1)}
                             \begin{proof}
                                     \begin{align*}
                                             (6 + 11x + 6x^2) & =  k_{0}(2 + x + 4x^2) +  k_{1}(1 - x + 3x^2) +  k_{2}(3 + 2x + 5x^2)                                \\
@@ -254,8 +263,6 @@
                                                     0 & 1  & \frac{-1}{3} & \bigm| & \frac{-16}{3} \\
                                                     0 & 0  & \frac{-2}{3} & \bigm| & \frac{-2}{3}  \\
                                             \end{bmatrix} \\
-                                    \end{align*}
-                                    \begin{align*}
                                             -\frac{3}{2}r3
                                              &
                                             \begin{bmatrix}
@@ -290,8 +297,8 @@
                                     \end{equation*}
                             \end{proof}
                             \pagebreak
+                            \subsection{Answer: Yes, $span(\{\vec{p_{1}},\vec{p_{2}},\vec{p_{3}}\}) = P_{2}$}
                       \item Does $\{p_1,p_2,p_3\}$ span $P_2$?
-                            \paragraph{Answer: Yes, $span(\{\vec{p_{1}},\vec{p_{2}},\vec{p_{3}}\}) = P_{2}$}
                             \begin{proof}
                                     An arbitrary vector in $P_{2}$ is of the form $\vec{p}=a+bx+cx^2$ and so becomes,\\\\
                                     $k_{0}(2 + x + 4x^2) +  k_{1}(1 - x + 3x^2) + k_{2}(3 + 2x + 5x^2) = a+bx+cx^2$\\\\
@@ -327,8 +334,8 @@
                                     so $A$ is consistent for every choice $a,b,$ and $c$.
                                     Thus, the vectors in $\{\vec{p_{1}},\vec{p_{2}},\vec{p_{3}}\}$ span $P_{2}$.
                             \end{proof}
+                            \subsection{Answer: Yes, $k_{1}\vec{p1} + k_{2}\vec{p2} + k_{3}\vec{p3} = \vec{0}$}
                       \item Is $\{p_1,p_2,p_3\}$ linearly independent?
-                            \paragraph{Answer: Yes, $k_{1}\vec{p1} + k_{2}\vec{p2} + k_{3}\vec{p3} = \vec{0}$}
                             \begin{proof}
                                     From part (b) we have                                     \begin{align*}
                                             \begin{bmatrix}
@@ -347,31 +354,33 @@
                             \end{proof}
                             \pagebreak
               \end{enumerate}
+              \section{Question 5}
         \item Consider the following planes in $\mathbb{R}^3$. $P_1: 2x + 3y - z = 0$ and $P_2: x + 2y - 2z = 0$
               \begin{enumerate}
+                      \subsection{Answer: $\{(-\frac{3}{2}, 1, 0), (\frac{1}{2}, 0, 1)\}$}
                       \item Find a set of vectors that spans $P_1$.
-                            \paragraph{Answer: any $2$ vectors from the set $\{(0, 1, 3), (-1, 0, 2), (-3, 2, 0)\}$}
                             \begin{proof}
+                                    Solve the following system $(2, 3, -1)^{T} = \vec{0}$
                                     \begin{align*}
-                                            \textrm{Let }\vec{e_1} = (1, 0, 0),\ \vec{e_2} = (0, 1, 0)\ \vec{e_3} = (0, 0, 1)
+                                            \begin{bmatrix}
+                                                    2 & 3 & -1 & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            \\ \frac{1}{2} r1
+                                            \begin{bmatrix}
+                                                    1 & \frac{3}{2} & \frac{-1}{2} & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            \\
+                                            \therefore (z=r),\ (y=q),\ (x=-\frac{3}{2}q+\frac{1}{2}r)
                                     \end{align*}
-                                    be unit vectors in $R^3$, we will compute the cross products
+                                    giving the following set of vectors.
                                     \begin{align*}
-                                            \vec{e_1} \times (2, 3, -1),\ \vec{e_2} \times (2, 3, -1),\ \vec{e_3} \times (2, 3, -1)
+                                            (x,y,z) & = (-\frac{3}{2}q+\frac{1}{2}r, q, r)           \\
+                                                    & = q(-\frac{3}{2}, 1, 0) + r(\frac{1}{2}, 0, 1)
                                     \end{align*}
-                                    to find a set of vectors that spans $P_1$
-                                    \begin{align*}
-                                            (1,0,0) \times (2,3,-1) & = ( (0)(-1) - (0)(3), (0)(2)-(1)(-1), (1)(3)-(0)(2) ) \\
-                                                                    & = (0, 1, 3)                                           \\\\
-                                            (0,1,0) \times (2,3,-1) & = ( (1)(-1) - (0)(3), (0)(2)-(0)(-1), (0)(3)-(1)(2) ) \\
-                                                                    & = (-1, 0, -2)                                         \\\\
-                                            (0,0,1) \times (2,3,-1) & = ( (0)(-1) - (1)(3), (1)(2)-(0)(-1), (0)(3)-(0)(2) ) \\
-                                                                    & = (-3, 2, 0)
-                                    \end{align*}
-                                    any $2$ vectors from the set $\{(0, 1, 3), (-1, 0, 2), (-3, 2, 0)\}$ will span the plane $P_1$.
+                                    a set of vectors that spans $P_1$ are $\{(-\frac{3}{2}, 1, 0), (\frac{1}{2}, 0, 1)\}$
                             \end{proof}
+                            \subsection{Answer: any $2$ vectors from the set $\{(0, 2, 2) , (-2, 0, -1), (-2, 1, 0)\}$}
                       \item Find a set of vectors that spans $P_2$.
-                            \paragraph{Answer: any $2$ vectors from the set $\{(0, 2, 2) , (-2, 0, -1), (-2, 1, 0)\}$}
                             \begin{proof}
                                     \begin{align*}
                                             \textrm{Let }\vec{e_1} = (1, 0, 0),\ \vec{e_2} = (0, 1, 0)\ \vec{e_3} = (0, 0, 1)
@@ -392,7 +401,43 @@
                                     any $2$ vectors from the set $\{(0, 2, 2) , (-2, 0, -1), (-2, 1, 0)\}$ will span the plane $P_2$.
                             \end{proof}
                             \pagebreak
-                      \item Find a set of vectors that spans the intersection of $P_1$ and $P_2$. (Recall that we showed the intersection of two subspaces is a subspace).
+                            \subsection{Answer: ${(-4, 3, 1)}$ spans $P_1 \bigcap P_2$}
+                      \item Find a set of vectors that spans the intersection of $P_1$ and $P_2$.
+                            \begin{proof}
+                                    We will find the span of the solution space by solving the following system of equations
+                                    \begin{align*}
+                                            P_{1}: 2x+3y-z = 0         \\
+                                            P_{2}: x+2y-2z = 0         \\\\
+                                            \begin{bmatrix}
+                                                    2 & 3 & -1 & \bigm| & 0 \\
+                                                    1 & 2 & -2 & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            \\
+                                            [r1] \leftrightarrow  [r2]
+                                            \begin{bmatrix}
+                                                    2 & 3 & -1 & \bigm| & 0 \\
+                                                    1 & 2 & -2 & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            \\
+                                            (-2)r1+r2
+                                            \begin{bmatrix}
+                                                    1 & 2  & -2 & \bigm| & 0 \\
+                                                    0 & -1 & 3  & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            \\
+                                            2(r2)+r1
+                                            \begin{bmatrix}
+                                                    1 & 0  & 4 & \bigm| & 0 \\
+                                                    0 & -1 & 3 & \bigm| & 0 \\
+                                            \end{bmatrix} \\
+                                            \therefore (z=t),\ (y=3t),\ (x=-4t)
+                                    \end{align*}
+                                    giving the following vector.
+                                    \begin{align*}
+                                            (x,y,z) = (-4t, 3t, t) = t(-4, 3, 1)
+                                    \end{align*}
+                                    therefore the set \{$(-4, 3, 1)$\} spans $P_1 \bigcap P_2$
+                            \end{proof}
               \end{enumerate}
               \begin{figure}[htbp]
                       \centering
