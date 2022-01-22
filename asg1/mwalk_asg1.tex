@@ -3,6 +3,8 @@
 \usepackage{latexsym}
 \usepackage{amsfonts}
 \usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
 
 \setlength{\textheight}{10in}
 \setlength{\textwidth}{6.5in}
@@ -31,13 +33,13 @@
               \end{enumerate}
               \paragraph{Answer:} No, $V$ is not a vector space.
               \begin{proof}
-                      let $({x_0}, {y_0}){^T}, ({x_1}, {y_1}){^T} \in V$,
+                      let $({x_0}, {y_0}), ({x_1}, {y_1}) \in V$,
                       and take the vector space operations on $V$
                       to be the usual operations of $vector$
                       addition and $scalar$ multiplication; that is,
                       \begin{align}
-                              ({x_0}, {y_0}){^T}+ & ({x_1}, {y_1}){^T} =({x_0}+{x_1}, {y_0}+{y_1}){^T} \\
-                                                  & k({x_0}, {y_0}){^T} = ({kx_0}, {ky_0}){^T}
+                              ({x_0}, {y_0})+ & ({x_1}, {y_1}) =({x_0}+{x_1}, {y_0}+{y_1}) \\
+                                              & k({x_0}, {y_0}) = ({kx_0}, {ky_0})
                       \end{align}
                       $V$ is closed under scalar addition since ${x_0 + x_1} \ge {y_0 + y_1}$ \\\\
                       However, by properties of inequalities if the constant,
@@ -45,6 +47,7 @@
 
                       Given that k is negative, ${x\geq y} \rightarrow {kx\leq ky}$
               \end{proof}
+              \pagebreak
               \begin{enumerate}
                       \item[(b)] Consider the set $W = \{f \in F(-\infty, \infty) \ | f(1) = 0\}$
                             with the usual scalar multiplication and vector addition from
@@ -81,6 +84,7 @@
 
                       Therefore $W$ is a subspace of $F(-\infty, \infty)$ and hence is a vector space.
               \end{proof}
+              \pagebreak
         \item
               Let $V$ be a vector space.
               \begin{enumerate}
@@ -155,7 +159,7 @@
                                             \end{vmatrix}
                                             = 1 \neq 0
                                     \end{equation*}
-                            \end{proof}
+                            \end{proof}\pagebreak
                       \item \DS{ \left\{A \in{M_{nn}} \ | tr (A) = 0 \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in M_{nn} \ |
                                     tr(A) = 0 \right\}}$ is a subspace of $M_{nn}$.
@@ -182,6 +186,7 @@
                                     then for all $C = (c_{ii})$, the sum will be $0$, so $C$ is also in $W$.
                                     Therefore $W$ is a subspace of $M_{nn}$.
                             \end{proof}
+                            \pagebreak
                       \item \DS{ \left\{A \in{M_{nn}} \ | A^T = A \right\}}
                             \paragraph{Answer:} Yes, $W={ \left\{A \in{M_{nn}} \ |
                                     A^T = A \right\}}$ is a subspace of $M_{nn}$.
@@ -200,9 +205,8 @@
                                             (k\cdot A)^{T}  & = k\cdot A^{T} \\
                                                             & = k\cdot A
                                     \end{align*}
-
                                     so $W$ is a subspace of $M_{nn}$.
-                            \end{proof}
+                            \end{proof} \pagebreak
               \end{enumerate}
 
         \item Consider the following vectors in $P_2$: $p_1 = 2 + x + 4x^2$, $p_2 = 1 - x + 3x^2$, $p_3 = 3 + 2x + 5x^2$.
@@ -285,6 +289,7 @@
                                             \therefore (k_{1}, k_{2}, k_{3}) = (4, -5, 1) \\
                                     \end{equation*}
                             \end{proof}
+                            \pagebreak
                       \item Does $\{p_1,p_2,p_3\}$ span $P_2$?
                             \paragraph{Answer: Yes, $span(\{\vec{p_{1}},\vec{p_{2}},\vec{p_{3}}\}) = P_{2}$}
                             \begin{proof}
@@ -323,6 +328,76 @@
                                     Thus, the vectors in $\{\vec{p_{1}},\vec{p_{2}},\vec{p_{3}}\}$ span $P_{2}$.
                             \end{proof}
                       \item Is $\{p_1,p_2,p_3\}$ linearly independent?
+                            \paragraph{Answer: Yes, $k_{1}\vec{p1} + k_{2}\vec{p2} + k_{3}\vec{p3} = \vec{0}$}
+                            \begin{proof}
+                                    From part (b) we have                                     \begin{align*}
+                                            \begin{bmatrix}
+                                                    2 & 1  & 3 & \bigm| & 0 \\
+                                                    1 & -1 & 2 & \bigm| & 0 \\
+                                                    4 & 3  & 5 & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                            =
+                                            \begin{bmatrix}
+                                                    1 & 0 & 0 & \bigm| & 0 \\
+                                                    0 & 1 & 0 & \bigm| & 0 \\
+                                                    0 & 0 & 1 & \bigm| & 0 \\
+                                            \end{bmatrix}
+                                    \end{align*}
+                                    Therefore $(k_{1}, k_{2}, k_{3}) = (0,0,0)$ so $\{\vec{p_{1}}, \vec{p_{2}}, \vec{p_{3}}\}$ is linearly independent
+                            \end{proof}
+                            \pagebreak
               \end{enumerate}
+        \item Consider the following planes in $\mathbb{R}^3$. $P_1: 2x + 3y - z = 0$ and $P_2: x + 2y - 2z = 0$
+              \begin{enumerate}
+                      \item Find a set of vectors that spans $P_1$.
+                            \paragraph{Answer: any $2$ vectors from the set $\{(0, 1, 3), (-1, 0, 2), (-3, 2, 0)\}$}
+                            \begin{proof}
+                                    \begin{align*}
+                                            \textrm{Let }\vec{e_1} = (1, 0, 0),\ \vec{e_2} = (0, 1, 0)\ \vec{e_3} = (0, 0, 1)
+                                    \end{align*}
+                                    be unit vectors in $R^3$, we will compute the cross products
+                                    \begin{align*}
+                                            \vec{e_1} \times (2, 3, -1),\ \vec{e_2} \times (2, 3, -1),\ \vec{e_3} \times (2, 3, -1)
+                                    \end{align*}
+                                    to find a set of vectors that spans $P_1$
+                                    \begin{align*}
+                                            (1,0,0) \times (2,3,-1) & = ( (0)(-1) - (0)(3), (0)(2)-(1)(-1), (1)(3)-(0)(2) ) \\
+                                                                    & = (0, 1, 3)                                           \\\\
+                                            (0,1,0) \times (2,3,-1) & = ( (1)(-1) - (0)(3), (0)(2)-(0)(-1), (0)(3)-(1)(2) ) \\
+                                                                    & = (-1, 0, -2)                                         \\\\
+                                            (0,0,1) \times (2,3,-1) & = ( (0)(-1) - (1)(3), (1)(2)-(0)(-1), (0)(3)-(0)(2) ) \\
+                                                                    & = (-3, 2, 0)
+                                    \end{align*}
+                                    any $2$ vectors from the set $\{(0, 1, 3), (-1, 0, 2), (-3, 2, 0)\}$ will span the plane $P_1$.
+                            \end{proof}
+                      \item Find a set of vectors that spans $P_2$.
+                            \paragraph{Answer: any $2$ vectors from the set $\{(0, 2, 2) , (-2, 0, -1), (-2, 1, 0)\}$}
+                            \begin{proof}
+                                    \begin{align*}
+                                            \textrm{Let }\vec{e_1} = (1, 0, 0),\ \vec{e_2} = (0, 1, 0)\ \vec{e_3} = (0, 0, 1)
+                                    \end{align*}
+                                    be unit vectors in $R^3$, we will compute the cross products
+                                    \begin{align*}
+                                            \vec{e_1} \times (1, 2, -2),\ \vec{e_2} \times (1, 2, -2),\ \vec{e_3} \times (1, 2, -2)
+                                    \end{align*}
+                                    to find a set of vectors that spans $P_2$
+                                    \begin{align*}
+                                            (1,0,0) \times (1, 2, -2) & = ( (0)(-2) - (0)(2), (0)(1)-(1)(-2), (1)(2)-(0)(1) ) \\
+                                                                      & = (0, 2, 2)                                           \\\\
+                                            (0,1,0) \times (1, 2, -2) & = ( (1)(-2) - (0)(2), (0)(1)-(0)(-2), (0)(3)-(1)(1) ) \\
+                                                                      & = (-2, 0, -1)                                         \\\\
+                                            (0,0,1) \times (1, 2, -2) & = ( (0)(-2) - (1)(2), (1)(1)-(0)(-2), (0)(3)-(0)(1) ) \\
+                                                                      & = (-2, 1, 0)
+                                    \end{align*}
+                                    any $2$ vectors from the set $\{(0, 2, 2) , (-2, 0, -1), (-2, 1, 0)\}$ will span the plane $P_2$.
+                            \end{proof}
+                            \pagebreak
+                      \item Find a set of vectors that spans the intersection of $P_1$ and $P_2$. (Recall that we showed the intersection of two subspaces is a subspace).
+              \end{enumerate}
+              \begin{figure}[htbp]
+                      \centering
+                      \includegraphics[width = 0.8\textwidth]{//home/the-scientist/linear/linear-algebra/asg1/resources/sol_space_white.jpg}
+                      \caption{$p_{1} \bigcap p_{2}$ \url{https://www.geogebra.org/3d/kuawemzp}\label{fig:solution space}}
+              \end{figure}
 \end{enumerate}
 \end{document}
