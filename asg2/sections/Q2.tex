@@ -1,0 +1,172 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Recall the standard basis of
+  $\mathbb{R}^3$, \DS{ \vec{e_1} = [1 \ 0 \ 0]^T,
+  \ \vec{e_2} = [0 \ 1 \ 0]^T, \ \vec{e_3} = [0 \ 0 \ 1]^T}}
+% -----------------------------------
+% Question 2.a
+% -----------------------------------
+\subsection[Consider the matrix $A$ Does the set of vectors \DS{\{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} form a basis for $\mathbb{R}^3$]
+{Consider the matrix \DS{
+    A = \begin{bmatrix}
+      \ 1 & 0 & 2 \ \\
+      \ 1 & 3 & 2 \ \\
+      \ 0 & 3 & 2 \
+    \end{bmatrix}}. Does the set of vectors \DS{S_1 = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} form a basis for $\mathbb{R}^3$?
+}
+\fbox{${S_{1}}$ is a basis for $\mathbb{R}^3$}
+\begin{proof}
+  To see if the vectors in $S_{1}$ are a basis for $\mathbb{R}^3$, we must verify two things \\\\
+  (1) $span\{S_{1}\} = \mathbb{R}^3$,
+  \begin{equation*}
+    [a\ b\ c]^{T} = c_{1}A\vec{e_1} + c_{2}A\vec{e_2} + c_{3}A\vec{e_1}
+  \end{equation*}
+  $$
+    \begin{matrix}
+      1c_{1} & + & 0c_{2} & + & 2c_{3} & = & a \ \\
+      1c_{1} & + & 3c_{2} & + & 2c_{3} & = & b \ \\
+      0c_{1} & + & 3c_{2} & + & 2c_{3} & = & c \
+    \end{matrix}
+  $$
+  (2) $S_{1}$ is linearly independent.
+  \begin{equation*}
+    [0\ 0\ 0]^{T} = c_{1}A\vec{e_1} + c_{2}A\vec{e_2} + c_{3}A\vec{e_1}
+  \end{equation*}
+  $$
+    \begin{matrix}
+      1c_{1} & + & 0c_{2} & + & 2c_{3} & = & 0 \ \\
+      1c_{1} & + & 3c_{2} & + & 2c_{3} & = & 0 \ \\
+      0c_{1} & + & 3c_{2} & + & 2c_{3} & = & 0 \
+    \end{matrix}
+  $$
+  Thus, we have reduced the problem to showing that the homogenous system (2) has only the trivial solution, and that the nonhomogenous system (1) is consistent for all values c1, c2, c3.
+  The augmented matrix has the reduced row echelon form,
+  \begin{align*}
+    \begin{bmatrix}
+      \ 1 & 0 & 0 & \bigm| & 0\ \\
+      \ 0 & 1 & 0 & \bigm| & 0\ \\
+      \ 0 & 0 & 1 & \bigm| & 0\
+    \end{bmatrix} = I_{3}
+  \end{align*}
+  $\therefore {S_{1}}$ is a basis for $\mathbb{R}^3$
+\end{proof}
+% -----------------------------------
+% Question 2.b
+% -----------------------------------
+\subsection[Consider the matrix $B$ Does the set of vectors \DS{\{ B\vec{e_1},B\vec{e_2},B\vec{e_3} \}} form a basis for $\mathbb{R}^3$?]
+{Consider the matrix \DS{ B = \begin{bmatrix}
+      \ 1 & 0 & 2  \ \\
+      \ 1 & 3 & 0  \ \\
+      \ 0 & 3 & -2 \
+    \end{bmatrix}}. Does the set of vectors \DS{S_2 = \{ B\vec{e_1},B\vec{e_2},B\vec{e_3} \}} form a basis for $\mathbb{R}^3$?
+}
+\fbox{$S_{2}$ is not a basis for $\mathbb{R}^3$}
+\begin{proof}
+  To see if the vectors in $S_{2}$ are a basis for $\mathbb{R}^3$, we must verify two things \\\\
+  (1) $span\{S_{2}\} = \mathbb{R}^3$,
+  \begin{equation*}
+    [a\ b\ c]^{T} = c_{1}B\vec{e_1} + c_{2}B\vec{e_2} + c_{3}B\vec{e_1}
+  \end{equation*}
+  $$
+    \begin{matrix}
+      \  & 1c_{1} & + & 0c_{2} & + & 2c_{3}    & = & a\ \\
+      \  & 1c_{1} & + & 3c_{2} & + & 0c_{3}    & = & b\ \\
+      \  & 0c_{1} & + & 3c_{2} & + & {-2}c_{3} & = & c\
+    \end{matrix}
+  $$
+  (2) $S_{2}$ is linearly independent.
+  \begin{equation*}
+    [0\ 0\ 0]^{T} = c_{1}B\vec{e_1} + c_{2}B\vec{e_2} + c_{3}B\vec{e_1}
+  \end{equation*}
+  $$
+    \begin{matrix}
+      \  & 1c_{1} & + & 0c_{2} & + & 2c_{3}    & = & 0\ \\
+      \  & 1c_{1} & + & 3c_{2} & + & 0c_{3}    & = & 0\ \\
+      \  & 0c_{1} & + & 3c_{2} & + & {-2}c_{3} & = & 0\
+    \end{matrix}
+  $$
+  Thus, we have reduced the problem to showing that the homogenous system (2) has only the trivial solution, and that the nonhomogenous system (1) is consistent for all values c1, c2, c3.
+  The augmented matrix has the reduced row echelon form,
+  \begin{align*}
+    \begin{bmatrix}
+      \ 1 & 0 & 2            & \bigm| & 0\ \\
+      \ 0 & 1 & -\frac{2}{3} & \bigm| & 0\ \\
+      \ 0 & 0 & 0            & \bigm| & 0\
+    \end{bmatrix}
+    \neq I_{3}
+  \end{align*}
+  $\therefore S_{2}$ is not a basis for $\mathbb{R}^3$
+\end{proof}
+
+% -----------------------------------
+% Question 2.c
+% -----------------------------------
+\subsection{Make a conjecture of the form ``\DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} forms a basis for $\mathbb{R}^3$ if and only if $A$ \emph{(insert appropriate property of A here)}''.
+}
+\fbox{
+  Conjecture \DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} forms a basis for $\mathbb{R}^3$ if and only if $A$ \emph{(is an invertible matrix)}.
+}
+% -----------------------------------
+% Question 2.d (bonus)
+% -----------------------------------
+\subsection{Bonus: Prove your conjecture.}
+\begin{proof}
+  \begin{align}
+    A       & = AI_{3}                                                 \\
+            & = A[\vec{e_1}\ \vec{e_2}\ \vec{e_3}]                     \\
+            & = [A\vec{e_1}\ A\vec{e_2}\ A\vec{e_3}]                   \\
+    A^{-1}A & = A^{-1}[A\vec{e_1}\ A\vec{e_2}\ A\vec{e_3}]             \\
+            & = [A^{-1}A\vec{e_1}\ A^{-1}A\vec{e_2}\ A^{-1}A\vec{e_3}] \\
+            & = [I_{3}\vec{e_1}\ I_{3}\vec{e_2}\ I_{3}\vec{e_3}]       \\
+            & = [\vec{e_1}\ \vec{e_2}\ \vec{e_3}]                      \\
+            & = I_{3}
+  \end{align}
+\end{proof}
+\end{document}
+
+%  \begin{align*}
+%    \textrm{Show work.}                      \\
+%    A\vec{e_1} & =
+%    \begin{bmatrix}
+%      \ 1 & 0 & 2 \ \\
+%      \ 1 & 3 & 2 \ \\
+%      \ 0 & 3 & 2 \
+%    \end{bmatrix} \cdot
+%    \begin{bmatrix}
+%      \ 1 \ \\
+%      \ 0 \ \\
+%      \ 0 \
+%    \end{bmatrix}
+%    =
+%    (1)\begin{bmatrix}
+%      \ 1 \ \\
+%      \ 1 \ \\
+%      \ 0 \
+%    \end{bmatrix}
+%    + (0)\begin{bmatrix}
+%      \ 0 \ \\
+%      \ 3 \ \\
+%      \ 3 \
+%    \end{bmatrix}
+%    + (0)\begin{bmatrix}
+%      \ 2 \ \\
+%      \ 2 \ \\
+%      \ 2 \
+%    \end{bmatrix}           \\
+%               & = \begin{bmatrix}
+%      \ 1 \ \\
+%      \ 1 \ \\
+%      \ 0 \
+%    \end{bmatrix}
+%    \implies A\vec{e_2}  = \begin{bmatrix}
+%      \ 0 \ \\
+%      \ 3 \ \\
+%      \ 3 \
+%    \end{bmatrix}
+%    \implies A\vec{e_3}  = \begin{bmatrix}
+%      \ 2 \ \\
+%      \ 2 \ \\
+%      \ 2 \
+%    \end{bmatrix}
+%  \end{align*}

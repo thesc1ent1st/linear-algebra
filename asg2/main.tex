@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{mathtools}
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\hypersetup{
+    colorlinks=true, % set true if you want colored links
+    %linktoc=all,     % set to all if you want both sections and subsections linked
+    linkcolor=black,  % choose some color if you want links to stand out
+}
+
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.0in}
+\setlength{\parskip}{0.15in}
+\setlength{\oddsidemargin}{-0.1in}
+
+\sectionfont{\fontsize{10}{10}\selectfont}
+\subsectionfont{\fontsize{10}{10}\selectfont}
+
+\newcommand{\DS} [1] {${\displaystyle #1}$}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\author{Michael Walker}
+\title{Math 2311 $-$ Assignment 2}
+\date{\today}
+
+\begin{document}
+\maketitle
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+% problem 1
+\subfile{sections/Q1}
+
+% problem 2 parts a, b, c
+\subfile{sections/Q2}
+
+% problem 3 parts a, b, c
+\subfile{sections/Q3}
+
+% problem 4
+\subfile{sections/Q4}
+
+% problem 5 parts a, b, c, d
+\subfile{sections/Q5}
+
+% problem 6 parts a, b
+\subfile{sections/Q6}
+
+\end{document}

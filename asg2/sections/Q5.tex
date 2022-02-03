@@ -1,0 +1,135 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{Let $\vec{x} = [1 \ 2 \ 3]^T$, $\mathcal{B} = \{[1 \ 0 \ 0]^T, \  [1 \ 1 \ 0]^T, \ [1 \ 1 \ 1]^T \}$, and $\mathcal{C} = \{[1 \ 1 \ 0]^T, \  [0 \ 1 \ 1]^T, \ [1 \ 0 \ 1]^T \}$.}
+\subsection{Find $[\vec{x}]_{\mathcal{B}}$}
+\fbox{Solution: $[\vec{x}]_{\mathcal{B}} = [-1 \ -1 \ 3]^T$}
+        \begin{proof}
+                \begin{align*}
+                        \textrm{By inspection: }  \vec{x} = (-1)[1 \ 0 \ 0]^T + (-1)[1 \ 1 \ 0]^T + (3)[1 \ 1 \ 1]^T
+                \end{align*}
+                $\therefore [\vec{x}]_{\mathcal{B}} =  [-1 \ -1 \ 3]^T $
+        \end{proof}
+        \subsection{Find $[\vec{x}]_{\mathcal{C}}$}
+        \fbox{Solution: $[\vec{x}]_{\mathcal{C}} = [0 \ 2 \ 1]^T$}
+\begin{proof}
+        \begin{align*}
+                \textrm{By inspection: }\vec{x} =(0)[1 \ 1 \ 0]^T + (2)[0 \ 1 \ 1]^T + (1)[1 \ 0 \ 1]^T
+        \end{align*}
+        $\therefore [\vec{x}]_{\mathcal{C}} = [0 \ 2 \ 1]^T$
+\end{proof}
+\subsection{Find $P_{\mathcal{C} \leftarrow \mathcal{B}}$ and compute $P_{\mathcal{C} \leftarrow \mathcal{B}}[\vec{x}]_{\mathcal{B}}$}
+\begin{align*}
+        \boxed{
+        Solutions: P_{\mathcal{C} \leftarrow \mathcal{B}} =
+        \begin{bmatrix}
+                \ {1}/{2}  & 1 & {1}/{2} \ \\
+                \ -{1}/{2} & 0 & {1}/{2} \ \\
+                \ {1}/{2}  & 0 & {1}/{2} \
+        \end{bmatrix}; [\vec{x}]_\mathcal{C} = P_{\mathcal{C} \leftarrow \mathcal{B}}[\vec{x}]_{\mathcal{B}} = [0 \ 2 \ 1]^T
+                }
+\end{align*}
+\begin{proof}
+        \begin{align*}
+                \textrm{Partitioned matrix } [\ \mathcal{C}\ |\ \mathcal{B}\ ] =
+                 & \begin{bmatrix}
+                        \ 1 & 0 & 1 & \bigm| & 1 & 1 & 1 \ \\
+                        \ 1 & 1 & 0 & \bigm| & 0 & 1 & 1 \ \\
+                        \ 0 & 1 & 1 & \bigm| & 0 & 0 & 1 \
+                \end{bmatrix} \\
+                \textrm{Transition matrix } [\ I_3 \ |\ {\mathcal{C} \leftarrow \mathcal{B}}\ ] =
+                 & \begin{bmatrix}
+                        \ 1 & 0 & 0 & \bigm| & {1}/{2}  & 1 & {1}/{2} \ \\
+                        \ 0 & 1 & 0 & \bigm| & -{1}/{2} & 0 & {1}/{2} \ \\
+                        \ 0 & 0 & 1 & \bigm| & {1}/{2}  & 0 & {1}/{2} \
+                \end{bmatrix} \\
+                P_{\mathcal{C} \leftarrow \mathcal{B}} =
+                 & \begin{bmatrix}
+                        \ {1}/{2}  & 1 & {1}/{2} \ \\
+                        \ -{1}/{2} & 0 & {1}/{2} \ \\
+                        \ {1}/{2}  & 0 & {1}/{2} \
+                \end{bmatrix}
+        \end{align*}
+        \begin{align*}
+                [\vec{x}]_\mathcal{C} = P_{\mathcal{C} \leftarrow \mathcal{B}}[\vec{x}]_{\mathcal{B}}
+                 & = \begin{bmatrix}
+                        \ {1}/{2}  & 1 & {1}/{2} \ \\
+                        \ -{1}/{2} & 0 & {1}/{2} \ \\
+                        \ {1}/{2}  & 0 & {1}/{2} \
+                \end{bmatrix}[-1 \ -1 \ 3]^T \\
+                 & = [-1]\begin{bmatrix}
+                        \ {1}/{2} \ \\
+                        \ -{1}/{2}\ \\
+                        \ {1}/{2} \
+                \end{bmatrix} +
+                [-1] \begin{bmatrix}
+                        \ 1 \ \\
+                        \ 0 \ \\
+                        \ 0 \
+                \end{bmatrix} +
+                [3]\begin{bmatrix}
+                        \ {1}/{2} \ \\
+                        \ {1}/{2} \ \\
+                        \ {1}/{2} \
+                \end{bmatrix}                 \\
+                 & = [0 \ 2 \ 1]^T
+        \end{align*}
+\end{proof}
+\subsection{Find $P_{\mathcal{B} \leftarrow \mathcal{C}}$ and compute $P_{\mathcal{B} \leftarrow \mathcal{C}}[\vec{x}]_{\mathcal{C}}$}
+\begin{align*}
+        \boxed{
+        Solutions: P_{\mathcal{B} \leftarrow \mathcal{C}} =
+        \begin{bmatrix}
+                \ 0 & -1 & 1 \  \\
+                \ 1 & 0  & -1 \ \\
+                \ 0 & 1  & 1  \
+        \end{bmatrix}; [\vec{x}]_\mathcal{B} = P_{\mathcal{B} \leftarrow \mathcal{C}}[\vec{x}]_{\mathcal{C}} = [-1 \ -1 \ 3]^T
+                }
+\end{align*}
+\begin{proof}
+        \begin{align*}
+                \textrm{Partitioned matrix } [\ \mathcal{B}\ |\ \mathcal{C}\ ] =
+                 & \begin{bmatrix}
+                        \ 1 & 1 & 1 & \bigm| & 1 & 0 & 1 \ \\
+                        \ 0 & 1 & 1 & \bigm| & 1 & 1 & 0 \ \\
+                        \ 0 & 0 & 1 & \bigm| & 0 & 1 & 1 \
+                \end{bmatrix} \\
+                \textrm{Transition matrix } [\ I_3 \ |\ {\mathcal{B} \leftarrow \mathcal{C}}\ ] =
+                 & \begin{bmatrix}
+                        \ 1 & 0 & 0 & \bigm| & 0 & -1 & 1 \  \\
+                        \ 0 & 1 & 0 & \bigm| & 1 & 0  & -1 \ \\
+                        \ 0 & 0 & 1 & \bigm| & 0 & 1  & 1 \
+                \end{bmatrix} \\
+                P_{\mathcal{B} \leftarrow \mathcal{C}} =
+                 & \begin{bmatrix}
+                        \ 0 & -1 & 1 \  \\
+                        \ 1 & 0  & -1 \ \\
+                        \ 0 & 1  & 1  \
+                \end{bmatrix}
+        \end{align*}
+        \begin{align*}
+                [\vec{x}]_\mathcal{B} = P_{\mathcal{B} \leftarrow \mathcal{C}}[\vec{x}]_{\mathcal{C}}
+                 & = \begin{bmatrix}
+                        \ 0 & -1 & 1 \  \\
+                        \ 1 & 0  & -1 \ \\
+                        \ 0 & 1  & 1  \
+                \end{bmatrix}[0 \ 2 \ 1]^T \\
+                 & = [0]\begin{bmatrix}
+                        \ 0 \ \\
+                        \ 1 \ \\
+                        \ 0 \
+                \end{bmatrix} +
+                [2] \begin{bmatrix}
+                        \ -1 \ \\
+                        \ 0  \ \\
+                        \ 1  \
+                \end{bmatrix} +
+                [1]\begin{bmatrix}
+                        \ 1  \ \\
+                        \ -1 \ \\
+                        \ 1  \
+                \end{bmatrix}                \\
+                 & = [-1 \ -1 \ 3]^T
+        \end{align*}
+\end{proof}
+\end{document}

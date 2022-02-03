@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+
+\section{ Find a basis for the subspace of P3 spanned by the following polynomials (vectors):\\$p_1 = 1 + x + 3x^2 + 4x^3, \ p_2 = 1 + 2x^2 + 3x^3, \ p_3 = x + x^2 + 2x^3, \ p_4 = 1 + x + 3x^2 + 5x^3$}
+\fbox{Solution: the vectors $\vec{p_{1}}, \vec{p_{2}}, \vec{p_{3}}$ form a basis for span$\{p_1, p_2, p_3, p_4\}$}
+\begin{proof}
+        The equation $k_{1}\vec{p_{1}} + k_{2}\vec{p_{2}} + k_{3}\vec{p_{3}} + k_{4}\vec{p_{4}} = \vec{0}$ can be written as a linear system
+        $$
+                \begin{matrix}
+                        1k_{1} + 1k_{2} + 0k_{3}  +1k_{4} = 0 \\
+                        1k_{1} + 0k_{2} + 1k_{3}  +1k_{4} = 0 \\
+                        3k_{1} + 2k_{2} + 1k_{3}  +3k_{4} = 0 \\
+                        4k_{1} + 3k_{2} + 2k_{3}  +5k_{4} = 0
+                \end{matrix}
+        $$
+        whos augmented matrix has the reduced row echelon form
+        \begin{align*}
+                                   & \begin{bmatrix}
+                        \ 1 & 0 & 0 & 0 & \bigm| & 0 \ \\
+                        \ 0 & 1 & 0 & 1 & \bigm| & 0 \ \\
+                        \ 0 & 0 & 1 & 1 & \bigm| & 0 \ \\
+                        \ 0 & 0 & 0 & 0 & \bigm| & 0 \
+                \end{bmatrix}  \\
+                \implies k1 = 0,\  & k2 = -s,\ k3 = -s,\ k4 = s
+        \end{align*}
+        removing vector $\vec{p_4}$ gives span$\{p_1, p_2, p_3\}$ = span$\{p_1, p_2, p_3, p_4\}$. Since the vector equation\\
+        $k_{1}\vec{p_{1}} + k_{2}\vec{p_{2}} + k_{3}\vec{p_{3}} = \vec{0}$ has only the trivial solution.
+        We conclude that the vectors $\vec{p_{1}}, \vec{p_{2}}, \vec{p_{3}}$ form a basis for span$\{p_1, p_2, p_3, p_4\}$.
+\end{proof}
+\end{document}
