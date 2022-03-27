@@ -1,215 +1,48 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\section{Recall the standard basis of
-  $\mathbb{R}^3$, \DS{ \vec{e_1} = [1 \ 0 \ 0]^T,
-  \ \vec{e_2} = [0 \ 1 \ 0]^T, \ \vec{e_3} = [0 \ 0 \ 1]^T}}
-% -----------------------------------
-% Question 2.a
-% -----------------------------------
-\subsection[Consider the matrix $A$ Does the set of vectors \DS{\{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} form a basis for $\mathbb{R}^3$]
-{Consider the matrix \DS{
-    A = \begin{bmatrix}
-      \ 1 & 0 & 2 \ \\
-      \ 1 & 3 & 2 \ \\
-      \ 0 & 3 & 2 \
-    \end{bmatrix}}. Does the set of vectors \DS{S_1 = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} form a basis for $\mathbb{R}^3$?
-}
-\fbox{Solution: ${S_{1}}$ is a basis for $\mathbb{R}^3$}
-\begin{proof}
-  To see if the vectors in $S_{1}$ are a basis for $\mathbb{R}^3$, we will verify $A$ is invertable.
-  \begin{equation*}
-    [0\ 0\ 0]^{T} = c_{1}A\vec{e_1} + c_{2}A\vec{e_2} + c_{3}A\vec{e_1}
-  \end{equation*}
-  $$
-    \begin{matrix}
-      1c_{1} & + & 0c_{2} & + & 2c_{3} & = & 0 \ \\
-      1c_{1} & + & 3c_{2} & + & 2c_{3} & = & 0 \ \\
-      0c_{1} & + & 3c_{2} & + & 2c_{3} & = & 0 \
-    \end{matrix}
-  $$
-  The augmented matrix has the reduced row echelon form,
-  \begin{align*}
-    \begin{bmatrix}
-      \ 1 & 0 & 0 & \bigm| & 0\ \\
-      \ 0 & 1 & 0 & \bigm| & 0\ \\
-      \ 0 & 0 & 1 & \bigm| & 0\
-    \end{bmatrix} = I_{3}
-  \end{align*}
-  From inspecting the pivots of $rref(A)$, we can see that $col(A) = \{[\ 1\ 1 \ 0\ ]^T, [\ 0\ 3\ 3\ ]^T, [\ 2\ 2\ 2\ ]^T \}$, is a basis for $\mathbb{R}^3$, but
-  $A = [ A\vec{e_1} \ | \ A\vec{e_2}\ |\ A\vec{e_3}]\implies col(A) = S_1$
-  $\therefore {S_{1}}$ is a basis for $\mathbb{R}^3$.
-\end{proof}
-% -----------------------------------
-% Question 2.b
-% -----------------------------------
-\subsection[Consider the matrix $B$ Does the set of vectors \DS{\{ B\vec{e_1},B\vec{e_2},B\vec{e_3} \}} form a basis for $\mathbb{R}^3$?]
-{Consider the matrix \DS{ B = \begin{bmatrix}
-      \ 1 & 0 & 2  \ \\
-      \ 1 & 3 & 0  \ \\
-      \ 0 & 3 & -2 \
-    \end{bmatrix}}. Does the set of vectors \DS{S_2 = \{ B\vec{e_1},B\vec{e_2},B\vec{e_3} \}} form a basis for $\mathbb{R}^3$?
-}
-\fbox{Solution: $S_{2}$ is not a basis for $\mathbb{R}^3$}
-\begin{proof}
-  To see if the vectors in $S_{2}$ are a basis for $\mathbb{R}^3$, we will verify $B$ is invertable.
-  \begin{equation*}
-    [0\ 0\ 0]^{T} = c_{1}B\vec{e_1} + c_{2}B\vec{e_2} + c_{3}B\vec{e_1}
-  \end{equation*}
-  $$
-    \begin{matrix}
-      \  & 1c_{1} & + & 0c_{2} & + & 2c_{3}    & = & 0\ \\
-      \  & 1c_{1} & + & 3c_{2} & + & 0c_{3}    & = & 0\ \\
-      \  & 0c_{1} & + & 3c_{2} & + & {-2}c_{3} & = & 0\
-    \end{matrix}
-  $$
-  The augmented matrix has the reduced row echelon form,
-  \begin{align*}
-    \begin{bmatrix}
-      \ 1 & 0 & 2            & \bigm| & 0\ \\
-      \ 0 & 1 & -\frac{2}{3} & \bigm| & 0\ \\
-      \ 0 & 0 & 0            & \bigm| & 0\
-    \end{bmatrix}
-    \neq I_{3}
-  \end{align*}
-  $S_{2}$ is not a basis for $\mathbb{R}^3$ because $rank(B) = 2 \neq dim(\mathbb{R}^3)$
-\end{proof}
-% -----------------------------------
-% Question 2.c
-% -----------------------------------
-\subsection{Make a conjecture of the form ``\DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} forms a basis for $\mathbb{R}^3$ if and only if $A$ \emph{(insert appropriate property of A here)}''.
-}
-\fbox{
-  Conjecture \DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} forms a basis for $\mathbb{R}^3$ if and only if $A$ \emph{(is an invertible matrix)}.
-}
-% -----------------------------------
-% Question 2.d (bonus)
-% -----------------------------------
-\subsection{Bonus: Prove your conjecture.}
-We will prove our conjecture \DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} forms a basis for $\mathbb{R}^3$ if and only if $A$ \emph{(is an invertible matrix)}, using our list of equivalent statements. Since we have already proven if $A$ is invertible, then $A\vec{x}=\vec{0}$ has only the trivial solution, we will use this. Asserting if $R$ is any row echelon form of a $3 \times3$ matrix $A$, then either R has at least one row of zeros, or $R$ is the identity matrix $I_3$.
+\section[Problem 2]{Let $T_{1}:M_{22}->P_{1}$ and $T_{2}:P_{1}->\mathbb{R}^3$ be linear transformations}
+given by
+$$
+  T_{1}(\begin{bmatrix}
+    a & b \\
+    c & d
+  \end{bmatrix})
+  = (a + b) + (c + d)x
+$$
 
-We will prove the reverse direction first "if $A$ is an invertible matrix, then $S = \{A\vec{e_1},A\vec{e_2},A\vec{e_3} \}$ forms a basis for $\mathbb{R}^3$."
+% %%%%%%%
+% Problem 
+% 2.a
+% %%%%%%%
+\subsection{Find the formula for $T_{2} \circ T_{1}$ }
+\begin{equation*}
+  \boxed{ Solution:}
+\end{equation*}
 \begin{proof}
-  Suppose $R$ is the identity matrix $I_3$, then $A$ has an inverse, and $A\vec{x}$ is a linear combination of the column vectors of $A$. Since $A\vec{x}=\vec{0}$ has only the trivial solution, the column vectors of $A$ must be linearly independent.
-  Since we know that the $3$ column vectors of $A$ are linearly independent in the $3$-dimensional vector space $\mathbb{R}^3$, they must span $\mathbb{R}^3$, and form a basis for $\mathbb{R}^3$.
-  \begin{align*}
-    % e_1
-    A\vec{e_1} =
-    \begin{bmatrix}
-      \ a_{11} & a_{12} & a_{13} \ \\
-      \ a_{21} & a_{22} & a_{23} \ \\
-      \ a_{31} & a_{32} & a_{33} \
-    \end{bmatrix} \cdot
-    \begin{bmatrix}
-      \ 1 \ \\
-      \ 0 \ \\
-      \ 0 \
-    \end{bmatrix}
-     & =
-    (1)\begin{bmatrix}
-      \ a_{11} \ \\
-      \ a_{21} \ \\
-      \ a_{31} \
-    \end{bmatrix}
-    + (0)\begin{bmatrix}
-      \ a_{12} \ \\
-      \ a_{22} \ \\
-      \ a_{32} \
-    \end{bmatrix}
-    + (0)\begin{bmatrix}
-      \ a_{13} \ \\
-      \ a_{23} \ \\
-      \ a_{33} \
-    \end{bmatrix}
-    = \begin{bmatrix}
-      \ a_{11} \ \\
-      \ a_{21} \ \\
-      \ a_{31} \
-    \end{bmatrix}                         \\
-    % e_2
-    A\vec{e_2} =
-    \begin{bmatrix}
-      \ a_{11} & a_{12} & a_{13} \ \\
-      \ a_{21} & a_{22} & a_{23} \ \\
-      \ a_{31} & a_{32} & a_{33} \
-    \end{bmatrix} \cdot
-    \begin{bmatrix}
-      \ 0 \ \\
-      \ 1 \ \\
-      \ 0 \
-    \end{bmatrix}
-     & =
-    (0)\begin{bmatrix}
-      \ a_{11} \ \\
-      \ a_{21} \ \\
-      \ a_{31} \
-    \end{bmatrix}
-    + (1)\begin{bmatrix}
-      \ a_{12} \ \\
-      \ a_{22} \ \\
-      \ a_{32} \
-    \end{bmatrix}
-    + (0)\begin{bmatrix}
-      \ a_{13} \ \\
-      \ a_{23} \ \\
-      \ a_{33} \
-    \end{bmatrix}
-    = \begin{bmatrix}
-      \ a_{12} \ \\
-      \ a_{22} \ \\
-      \ a_{32} \
-    \end{bmatrix}                         \\
-    % e_3
-    A\vec{e_3} =
-    \begin{bmatrix}
-      \ a_{11} & a_{12} & a_{13} \ \\
-      \ a_{21} & a_{22} & a_{23} \ \\
-      \ a_{31} & a_{32} & a_{33} \
-    \end{bmatrix} \cdot
-    \begin{bmatrix}
-      \ 0 \ \\
-      \ 0 \ \\
-      \ 1 \
-    \end{bmatrix}
-     & =
-    (0)\begin{bmatrix}
-      \ a_{11} \ \\
-      \ a_{21} \ \\
-      \ a_{31} \
-    \end{bmatrix}
-    + (0)\begin{bmatrix}
-      \ a_{12} \ \\
-      \ a_{22} \ \\
-      \ a_{32} \
-    \end{bmatrix}
-    + (1)\begin{bmatrix}
-      \ a_{13} \ \\
-      \ a_{23} \ \\
-      \ a_{33} \
-    \end{bmatrix}
-    = \begin{bmatrix}
-      \ a_{13} \ \\
-      \ a_{23} \ \\
-      \ a_{33} \
-    \end{bmatrix}                         \\
-     & A = [ A\vec{e_1} \ | \ A\vec{e_2}\ |\ A\vec{e_3}] \\
-     & \implies col(A)=S
-  \end{align*}
-  Therefore \DS{S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}} is a basis for $R^3$
 \end{proof}
-We will now prove the forward direction "if $S = \{ A\vec{e_1},A\vec{e_2},A\vec{e_3} \}$ forms a basis for $\mathbb{R}^3$ then $A$ is an invertible matrix."
-by proving its contrapositive "if $A$ is not an invertible matrix, then $S = \{A\vec{e_1},A\vec{e_2},A\vec{e_3} \}$ does not form a basis for $\mathbb{R}^3$"
+\pagebreak
+
+% %%%%%%%
+% Problem 
+% 2.b
+% %%%%%%%
+\subsection{Show that $T_{2} \circ T_{1}$ is not one-to-one by finding distinct $2 \times 2$ matricies $A$ and $B$ such that $T_{2} \circ T_{1}(A)=T_{2} \circ T_{1}(B)$}
+\begin{equation*}
+  \boxed{ Solution:}
+\end{equation*}
 \begin{proof}
-  Suppose R has at least one row of zeros, then $A$ has no inverse. We know from analysis of the positions of the $0's$ and $1's$ of $R$ that elementary row operations don't change the dimension of the row space or the column space of our matrix, so it must be true that
-  $$dim(\textrm{row space of } A) = dim(\textrm{row space of } R) \text{ and }dim(\textrm{column space of }A) = \textrm{dim}(\textrm{column space of } R). $$
-  Since these two numbers are the same, the row and column space have the same dimension $rank(A)$; the dimension of the null space of $A$ is $nullity(A)$
-  \begin{align*}
-    0 < nullity(A)                                  & \leq dim(\mathbb{R}^3)                                                        \\
-    rank(A) + nullity(A)                            & = dim(\mathbb{R}^3)                                                           \\
-    nullity(A)                                      & = dim(\mathbb{R}^3) - rank(A)                                                 \\
-    \implies  0 < [\ dim(\mathbb{R}^3) - rank(A)\ ] & \leq dim(\mathbb{R}^3) \implies  dim(\mathbb{R}^3)  > rank(A)          \geq 0 \\
-    \therefore rank(A)                              & < dim(\mathbb{R}^3)
-  \end{align*}
-  This proves, if $R$ has atleast one row of zeros then $rank(A)<dim(\mathbb{R}^3) \therefore$ $S$ is not a basis for $\mathbb{R}^3$
+\end{proof}
+
+% %%%%%%%
+% Problem 
+% 2.c
+% %%%%%%%
+\subsection{Show that $T_{2} \circ T_{1}$ is not onto by finding a vector $(a,b,c) \in \mathbb{R}^3$ that is not in the range $T_{2} \circ T_{1}(A)=T_{2} \circ T_{1}(B)$}
+
+\begin{equation*}
+  \boxed{ Solution:}
+\end{equation*}
+\begin{proof}
 \end{proof}
 \end{document}

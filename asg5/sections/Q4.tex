@@ -1,30 +1,86 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\section{ Find a basis for the subspace of $P^3$ spanned by the following polynomials (vectors):\\$p_1 = 1 + x + 3x^2 + 4x^3, \ p_2 = 1 + 2x^2 + 3x^3, \ p_3 = x + x^2 + 2x^3, \ p_4 = 1 + x + 3x^2 + 5x^3$}
-\fbox{Solution: the vectors $\vec{p_{1}}, \vec{p_{2}}, \vec{p_{3}}$ form a basis for span$\{p_1, p_2, p_3, p_4\}$}
+\section[Problem 4]{Consider the linear transformation $D: \mathcal{P}_3 \to \mathcal{P}_2$ given by $D(p(x)) = p'(x)$ (i.e. differentiation). Consider also the linear transformation $S: \mathcal{P}_2 \to \mathcal{P}_3$ given by \DS{S(p(x)) = \int_0^x p(t)dt}}
+% %%%%%%%
+% Problem 
+% 4.a
+% %%%%%%%
+\subsection{For an arbitrary $p(x) \in \mathcal{P}_2$, what is $(D \circ S)(p(x))$? What is another name for the transformation $D \circ S$?}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
 \begin{proof}
-        The equation $k_{1}\vec{p_{1}} + k_{2}\vec{p_{2}} + k_{3}\vec{p_{3}} + k_{4}\vec{p_{4}} = \vec{0}$ can be written as a linear system
-        $$
-                \begin{matrix}
-                        1k_{1} + 1k_{2} + 0k_{3}  +1k_{4} = 0 \\
-                        1k_{1} + 0k_{2} + 1k_{3}  +1k_{4} = 0 \\
-                        3k_{1} + 2k_{2} + 1k_{3}  +3k_{4} = 0 \\
-                        4k_{1} + 3k_{2} + 2k_{3}  +5k_{4} = 0
-                \end{matrix}
-        $$
-        whose augmented matrix has the reduced row echelon form
-        \begin{align*}
-                                   & \begin{bmatrix}
-                        \ 1 & 0 & 0 & 0 & \bigm| & 0 \ \\
-                        \ 0 & 1 & 0 & 1 & \bigm| & 0 \ \\
-                        \ 0 & 0 & 1 & 1 & \bigm| & 0 \ \\
-                        \ 0 & 0 & 0 & 0 & \bigm| & 0 \
-                \end{bmatrix}  \\
-                \implies k1 = 0,\  & k2 = -s,\ k3 = -s,\ k4 = s
-        \end{align*}
-        removing vector $\vec{p_4}$ gives span$\{p_1, p_2, p_3\}$ = span$\{p_1, p_2, p_3, p_4\}$. Since the vector equation\\
-        $k_{1}\vec{p_{1}} + k_{2}\vec{p_{2}} + k_{3}\vec{p_{3}} = \vec{0}$ has only the trivial solution.
-        We conclude that the vectors $\vec{p_{1}}, \vec{p_{2}}, \vec{p_{3}}$ form a basis for span$\{p_1, p_2, p_3, p_4\}$.
+\end{proof}
+\pagebreak
+% %%%%%%%
+% Problem 
+% 4.b
+% %%%%%%%
+\subsection{For an arbitrary $p(x) \in \mathcal{P}_3$, what is $(S \circ D)(p(x))$? What can you say about the transformation $S \circ D$? Compare to part (a).}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.c
+% %%%%%%%
+\subsection{Are $S$ and $D$ inverses? Explain.}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.d
+% %%%%%%%
+\subsection{Find a basis for Range($S$).}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.e
+% %%%%%%%
+\subsection{Find a basis for ker($D$), and for ${\rm ker}(D)^{\perp}$ (with respect to the standard inner product - see example 7 from section 6.1). Compare to part (d).}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.f
+% %%%%%%%
+\subsection{Show that $S$ is one-to-one. (and therefore $S: \mathcal{P}_2 \to {\rm Range}(S)$ is an isomorphism).}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.g
+% %%%%%%%
+\subsection{Verify that $D: {\rm Range}(S) \to \mathcal{P}_2$ and $S: \mathcal{P}_2 \to {\rm Range}(S)$ are inverses.}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
+\end{proof}
+% %%%%%%%
+% Problem 
+% 4.h
+% %%%%%%%
+\subsection{If we use the standard inner products on $\mathcal{P}_3$ and $\mathcal{P}_2$, is $D$ an inner product space isomorphism? Justify your answer.}
+\begin{equation*}
+        \boxed{ Solutions:}
+\end{equation*}
+\begin{proof}
 \end{proof}
 \end{document}
