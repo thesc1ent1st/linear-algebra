@@ -17,7 +17,7 @@
 }
 \fbox{Solution: ${S_{1}}$ is a basis for $\mathbb{R}^3$}
 \begin{proof}
-  To see if the vectors in $S_{1}$ are a basis for $\mathbb{R}^3$, we must verify $S_{1}$ is linearly independent.
+  To see if the vectors in $S_{1}$ are a basis for $\mathbb{R}^3$, we will verify $A$ is invertable.
   \begin{equation*}
     [0\ 0\ 0]^{T} = c_{1}A\vec{e_1} + c_{2}A\vec{e_2} + c_{3}A\vec{e_1}
   \end{equation*}
@@ -36,8 +36,9 @@
       \ 0 & 0 & 1 & \bigm| & 0\
     \end{bmatrix} = I_{3}
   \end{align*}
-  showing that the homogenous system has only the trivial solution
-  $\therefore {S_{1}}$ is a basis for $\mathbb{R}^3$
+  From inspecting the pivots of $rref(A)$, we can see that $col(A) = \{[\ 1\ 1 \ 0\ ]^T, [\ 0\ 3\ 3\ ]^T, [\ 2\ 2\ 2\ ]^T \}$, is a basis for $\mathbb{R}^3$, but
+  $A = [ A\vec{e_1} \ | \ A\vec{e_2}\ |\ A\vec{e_3}]\implies col(A) = S_1$
+  $\therefore {S_{1}}$ is a basis for $\mathbb{R}^3$.
 \end{proof}
 % -----------------------------------
 % Question 2.b
@@ -51,7 +52,7 @@
 }
 \fbox{Solution: $S_{2}$ is not a basis for $\mathbb{R}^3$}
 \begin{proof}
-  To see if the vectors in $S_{2}$ are a basis for $\mathbb{R}^3$, we must verify $S_{2}$ is linearly independent.
+  To see if the vectors in $S_{2}$ are a basis for $\mathbb{R}^3$, we will verify $B$ is invertable.
   \begin{equation*}
     [0\ 0\ 0]^{T} = c_{1}B\vec{e_1} + c_{2}B\vec{e_2} + c_{3}B\vec{e_1}
   \end{equation*}
@@ -71,7 +72,7 @@
     \end{bmatrix}
     \neq I_{3}
   \end{align*}
-  showing that the homogenous system has infinite solutions $\therefore S_{2}$ is not a basis for $\mathbb{R}^3$
+  $S_{2}$ is not a basis for $\mathbb{R}^3$ because $rank(B) = 2 \neq dim(\mathbb{R}^3)$
 \end{proof}
 % -----------------------------------
 % Question 2.c

@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+
+\usepackage{latexsym}
+\usepackage{amsfonts}
+\usepackage{amsmath, amsthm, amssymb}
+
+
+\setlength{\textheight}{10in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-1.0in}
+\setlength{\parskip}{0.15in}
+\setlength{\oddsidemargin}{-0.1in}
+
+\newcommand {\DS} [1] {${\displaystyle #1}$}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+\textbf{Math 2311  - Assignment 5}\\
+Due: Friday, April 1, 2022
+\end{center}
+
+
+\begin{enumerate}
+
+%\item Section 8.1, question 28 from the 12th edition (question 24 from 11th edition).
+
+\item For each of the following linear transformations $T: V \to W$ determine rank($T$) and nullity($T$).
+\begin{enumerate}
+\item dim($V$) = 5, dim($W$) = 7, and $T$ is one-to-one.
+\item dim($W$) = 4, and $T$ is both one-to-one and onto.
+\item dim($V$) = 5, dim($W$) = 3, and $T$ is onto.
+\item $T_A: \mathbb{R}^4 \to \mathbb{R}^3$ is given by $T_A(\vec{x}) = A\vec{x}$ where \DS{A = \begin{bmatrix}
+2 & 0 & 2 & 0 \\
+1 & 1 & 1& 1 \\
+0 & -1 & 0 & -1
+\end{bmatrix}}. 
+\end{enumerate}
+
+\item Section 8.2, question 34 from the 12th edition (question 26 from 11th edition).
+
+\item Let $T_1: U \to V$ and $T_2: V \to W$ be linear transformations.
+\begin{enumerate}
+\item Suppose $T_2 \circ T_1: U \to W$ is one-to-one. Prove $T_1$ is one-to-one.
+\item Suppose $T_2 \circ T_1: U \to W$ is onto. Prove $T_2$ is onto.
+\end{enumerate}
+
+\item Consider the linear transformation $D: \mathcal{P}_3 \to \mathcal{P}_2$ given by $D(p(x)) = p'(x)$ (i.e. differentiation). Consider also the linear transformation $S: \mathcal{P}_2 \to \mathcal{P}_3$ given by \DS{S(p(x)) = \int_0^x p(t)dt}
+
+\begin{enumerate}
+\item For an arbitrary $p(x) \in \mathcal{P}_2$, what is $(D \circ S)(p(x))$? What is another name for the transformation $D \circ S$?
+\item For an arbitrary $p(x) \in \mathcal{P}_3$, what is $(S \circ D)(p(x))$? What can you say about the transformation $S \circ D$? Compare to part (a).
+\item Are $S$ and $D$ inverses? Explain.
+\item Find a basis for Range($S$).
+\item Find a basis for ker($D$), and for ${\rm ker}(D)^{\perp}$ (with respect to the standard inner product - see example 7 from section 6.1). Compare to part (d).
+\item Show that $S$ is one-to-one. (and therefore $S: \mathcal{P}_2 \to {\rm Range}(S)$ is an isomorphism).
+\item Verify that $D: {\rm Range}(S) \to \mathcal{P}_2$ and $S: \mathcal{P}_2 \to {\rm Range}(S)$ are inverses.
+\item If we use the standard inner products on $\mathcal{P}_3$ and $\mathcal{P}_2$, is $D$ an inner product space isomorphism? Justify your answer.
+\end{enumerate}
+
+\item[Bonus:] Prove that for any linear transformation $T:V \to W$, if $\tilde{T}: {\rm ker}(T)^{\perp} \to {\rm Range}(T)$ is the restriction of $T$, then $\tilde{T}$ is an isomorphism. 
+
+
+
+
+
+\end{enumerate}
+\end{document}

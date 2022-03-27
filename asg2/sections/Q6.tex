@@ -10,46 +10,47 @@
 \begin{equation*}
         \boxed{ Solutions:
                 \begin{aligned}
-                        Bases:                                                                                    \\
-                        null(A)              & = \{[-1 \ -1 \ 1\ 0]^T,\  [\frac{2}{7} \ -\frac{4}{7} \ 0 \ 1]^T\} \\
-                        row(A)               & = \{[1 \ 0 \ 1 \ -\frac{2}{7}],\ [0 \ 1 \ 1 \ \frac{4}{7}]\}       \\
-                        col(A)               & = \{[1 \ 2 \ -1]^T, [4 \ 1 \ 3]^T\}                                \\
-                        Dimensions:                                                                               \\
+                        Bases:                                                                                            \\
+                        null(A)              & = \{[\ -1 \ -1 \ 1\ 0\ ]^T,\  [\ \frac{2}{7} \ -\frac{4}{7} \ 0 \ 1\ ]^T\} \\
+                        row(A)               & = \{[\ 1 \ 0 \ 1 \ -\frac{2}{7}\ ],\ [\ 0 \ 1 \ 1 \ \frac{4}{7}\ ]\}       \\
+                        col(A)               & = \{[\ 1 \ 2 \ -1\ ]^T, [\ 4 \ 1 \ 3\ ]^T\}                                \\
+                        Dimensions:                                                                                       \\
                         rank(A) = nullity(A) & = 2
                 \end{aligned}}
 \end{equation*}
 \begin{proof}
         \begin{align*}
-                rref(A)                              & =
+                rref(A)                                  & =
                 \begin{bmatrix}
                         \ 1 & 0 & 1 & -\frac{2}{7} \ \\
                         \ 0 & 1 & 1 & \frac{4}{7} \  \\
                         \ 0 & 0 & 0 & 0 \
-                \end{bmatrix}                                                                                                                              \\
-                \therefore [x_1 \ x_2 \ x_3 \ x_4]^T & = [-\mathcal{S}+\frac{2}{7}\mathcal{T}, \ -\mathcal{S} -\frac{4}{7}\mathcal{T}, \ \mathcal{S}, \ \mathcal{T}]^T \\
-                                                     & = \mathcal{S}[-1 \ -1 \ 1 0]^T + \mathcal{T}[\frac{2}{7}\ -\frac{4}{7}\ 0\ 1]^T                                 \\
-                \implies null(A)                     & = \{[-1 \ -1 \ 1\ 0]^T,\  [\frac{2}{7} \ -\frac{4}{7} \ 0 \ 1]^T\}                                              \\
-                                                     & \implies row(A) = \{[1 \ 0 \ 1 \ -\frac{2}{7}],\ [0 \ 1 \ 1 \ \frac{4}{7}]\}                                    \\
-                                                     & \implies col(A) = \{[1 \ 2 \ -1]^T,\ [4 \ 1 \ 3]^T\}                                                            \\
-                                                     & \implies rank(A) = 2                                                                                            \\
-                                                     & \implies nullity(A) = 2
+                \end{bmatrix}                                                                                                                                      \\
+                \therefore [\ x_1 \ x_2 \ x_3 \ x_4\ ]^T & = [\ -\mathcal{S}+\frac{2}{7}\mathcal{T}, \ -\mathcal{S} -\frac{4}{7}\mathcal{T}, \ \mathcal{S}, \ \mathcal{T}\ ]^T \\
+                                                         & = \mathcal{S}[\ -1 \ -1 \ 1 0\ ]^T + \mathcal{T}[\ \frac{2}{7}\ -\frac{4}{7}\ 0\ 1\ ]^T                             \\
+                \implies null(A)                         & = \{[\ -1 \ -1 \ 1\ 0\ ]^T,\  [\ \frac{2}{7} \ -\frac{4}{7} \ 0 \ 1\ ]^T\}                                          \\
+                                                         & \implies row(A) = \{[\ 1 \ 0 \ 1 \ -\frac{2}{7}\ ],\ [\ \ 0 \ 1 \ 1 \ \frac{4}{7}\ ]\}                              \\
+                                                         & \implies col(A) = \{[\ 1 \ 2 \ -1\ ]^T,\ [\ 4 \ 1 \ 3\ ]^T\}                                                        \\
+                                                         & \implies rank(A) = 2                                                                                                \\
+                                                         & \implies nullity(A) = 2
         \end{align*}
         $row(A)$ and $null(A)$ are $2$ dimensional subspaces of $R^4$, $col(A)$ is a $2$ dimensional subspace of $R^3$.
 \end{proof}
 \pagebreak
 \subsection{Is the vector $\vec{b} = [ \ 4 \ 6 \ -2 \ ]^T$ in the column space of $A$? If so, write $\vec{b}$ as a linear combination of the columns of $A$.}
-\fbox{Solution: Yes $\vec{b} \in col(A)$. $[ \ 4 \ 6 \ -2 \ ]^T = \frac{20}{7}[1 \ 2 \ -1]^T + \frac{2}{7}[4 \ 1 \ 3]^T$}
+\fbox{Solution: Yes $\vec{b} \in col(A)\land\vec{b} = \frac{20}{7}[\ 1 \ 2 \ -1\ ]^T + \frac{2}{7}[\ 4 \ 1 \ 3\ ]^T + (0)[\ 5\ 3\ 2\ ]^T + (0)[\ 2\ 0\ 2\ ]^T$
+}
+\\\\let $\vec{c1} = [\ 1 \ 2 \ -1\ ]^T$, $\vec{c2} = [\ 4 \ 1 \ 3\ ]^T$, and let $C = [\ \vec{c1}\ |\ \vec{c2}\ ]$ we will show $\vec{b} \in col(\ A\ )\implies rank(\ C\ ) = rank(\ C\ |\ \vec{b}\ )$
 \begin{proof}
-        If $\vec{b}$ is in the column space of $A$ then the following system will be consistent.
         \begin{equation*}
-                [ \ 4 \ 6 \ -2 \ ]^T = c_1[1 \ 2 \ -1]^T + c_2[4 \ 1 \ 3]^T
+                [ \ 4 \ 6 \ -2 \ ]^T = k_1[\ 1 \ 2 \ -1\ ]^T + k_2[\ 4 \ 1 \ 3\ ]^T
         \end{equation*}
         which can be expressed as,
         $$
                 \begin{matrix}
-                         & 1c_{1}  & + & 4c_{2} & = & 4  \\
-                         & 2c_{1}  & + & 1c_{2} & = & 6  \\
-                         & -1c_{1} & + & 3c_{2} & = & -2
+                         & 1k_{1}  & + & 4k_{2} & = & 4  \\
+                         & 2k_{1}  & + & 1k_{2} & = & 6  \\
+                         & -1k_{1} & + & 3k_{2} & = & -2
                 \end{matrix}
         $$
         whose augmented matrix has the reduced row echelon form
@@ -58,9 +59,10 @@
                         \ 1 & 0 & \bigm| & \frac{20}{7}\ \\
                         \ 0 & 1 & \bigm| & \frac{2}{7}   \\
                         \ 0 & 0 & \bigm| & 0\
-                \end{bmatrix} \\
-                \implies c_1 = \frac{20}{7}, c_2 = \frac{2}{7}
+                \end{bmatrix}
         \end{align*}
-        $\therefore \vec{b}$ is in the column space of $A$. $[ \ 4 \ 6 \ -2 \ ]^T = \frac{20}{7}[1 \ 2 \ -1]^T + \frac{2}{7}[4 \ 1 \ 3]^T$
+        because $rank(\ C\ ) = 2$ and $rank(\ C\ |\ \vec{b}\ ) = 2$ the system is consistent, so $\vec{b}$ is in the column space of $A$.
+        $\therefore\ \vec{b}$ as a linear combination of the columns of $A$ can expressed by the following,
+        \\$\vec{b} = \frac{20}{7}[\ 1 \ 2 \ -1\ ]^T + \frac{2}{7}[\ 4 \ 1 \ 3\ ]^T + (0)[\ 5\ 3\ 2\ ]^T + (0)[\ 2\ 0\ 2\ ]^T$
 \end{proof}
 \end{document}
