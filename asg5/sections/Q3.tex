@@ -1,25 +1,34 @@
 \documentclass[../main.tex]{subfiles}
 \begin{document}
 
-\section[Problem 3]{Let $T_{1}:U->V$ and $T_{2}:V->W$ be linear transformations.}
+\section[Problem 3]{Let $T_{1}:U\rightarrow V$ and $T_{2}:V\rightarrow W$ be linear transformations.}
 % %%%%%%%
 % Problem 
 % 3.a
 % %%%%%%%
-\subsection{Suppose $T_{2}\circ T{1}:U->W$ is one to one. Prove $T_{1}$ is one-to-one.}
-\begin{equation*}
-        \boxed{ Solutions:}
-\end{equation*}
+\subsection{Suppose $T_{2}\circ T{1}:U\rightarrow W$ is one to one. Prove $T_{1}$ is one-to-one.}
 \begin{proof}
+        $\displaystyle T:U\rightarrow V$ is one-to-one if and only if $\displaystyle T(\vec{u}) =T(\vec{v})$ implies that $\displaystyle \vec{u} =\vec{v}$\\\\
+        Assume $\displaystyle T_{1}(\vec{u}) =T_{1}(\vec{v})$. Then
+        \begin{align*}
+                T_{2}( T_{1}(\vec{u})) & =T_{2}( T_{1}(\vec{u}))
+        \end{align*}
+        but these expressions can also be written as
+        \begin{align*}
+                ( T_{2} \circ T_{1})(\vec{u}) & =( T_{2} \circ T_{1})(\vec{v})
+        \end{align*}
+        We said $\displaystyle T_{2} \circ T_{1} :U\rightarrow W$ is one-to-one, therefore $\displaystyle \vec{u} =\vec{v}$. \ So, $\displaystyle T_{1} :U\rightarrow V$ is also one to one.
 \end{proof}
 % %%%%%%%
 % Problem 
 % 3.b
 % %%%%%%%
-\subsection{Suppose $T_{2}\circ T{1}:U->W$ is one to one. Prove $T_{2}$ is onto.}
-\begin{equation*}
-        \boxed{ Solutions:}
-\end{equation*}
+\subsection{Suppose $T_{2}\circ T{1}:U\rightarrow W$ is onto. Prove $T_{2}$ is onto.}
 \begin{proof}
+        Since $\displaystyle T_{2} \circ T_{1}$ is onto, there exists vectors $\displaystyle \vec{u}$ and $\displaystyle \vec{v}$ such that $\displaystyle \vec{v} =T_{2} \circ T_{1}(\vec{u})$.\\\\
+        Assume, $\displaystyle \vec{w} =T_{1}(\vec{u})$. Then
+        \begin{equation*}
+                \vec{v} =T_{2}(\vec{w})
+        \end{equation*}So, $\displaystyle T_{2} :V\rightarrow W$ is onto.
 \end{proof}
 \end{document}
