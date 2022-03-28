@@ -3,46 +3,110 @@
 
 \section[Problem 2]{Let $T_{1}:M_{22}->P_{1}$ and $T_{2}:P_{1}->\mathbb{R}^3$ be linear transformations}
 given by
-$$
-  T_{1}(\begin{bmatrix}
-    a & b \\
-    c & d
-  \end{bmatrix})
-  = (a + b) + (c + d)x
-$$
-
+\begin{align*}
+  T_{1}\left(\begin{bmatrix}
+      a & b \\
+      c & d
+    \end{bmatrix}\right) & =( a+b) +( c+d) x \\
+  T_{2}( a+bx)                                & =( a,b,a)
+\end{align*}
 % %%%%%%%
 % Problem 
 % 2.a
 % %%%%%%%
 \subsection{Find the formula for $T_{2} \circ T_{1}$ }
-\begin{equation*}
-  \boxed{ Solution:}
-\end{equation*}
+\boxed{Solution:( a+b,\ c+d,\ a+b)}
 \begin{proof}
-\end{proof}
-\pagebreak
 
+  \begin{equation*}
+    \begin{aligned}
+      ( T_{2} \circ T_{1}) & =T_{2}\left( T_{1}\left(\begin{bmatrix}
+          a & b \\
+          c & d
+        \end{bmatrix}\right)\right) \\
+                           & =T_{2}(( a+b) +( c+d) x)
+    \end{aligned}
+  \end{equation*}
+  let $\displaystyle u=a+b$ and let $\displaystyle v=( c+d)$
+  \begin{align*}
+    \therefore T_{2}( u+vx) & =( u,\ v,\ u)       \\
+                            & =( a+b,\ c+d,\ a+b)
+  \end{align*}
+\end{proof}
 % %%%%%%%
 % Problem 
 % 2.b
 % %%%%%%%
 \subsection{Show that $T_{2} \circ T_{1}$ is not one-to-one by finding distinct $2 \times 2$ matricies $A$ and $B$ such that $T_{2} \circ T_{1}(A)=T_{2} \circ T_{1}(B)$}
-\begin{equation*}
-  \boxed{ Solution:}
-\end{equation*}
+\boxed{Solution:\displaystyle A=\begin{bmatrix}
+    -1 & 1 \\
+    -2 & 2
+  \end{bmatrix}
+  \ \displaystyle B=\begin{bmatrix}
+    -2 & 2 \\
+    -1 & 1
+  \end{bmatrix}}
 \begin{proof}
+  We will find a basis for $\displaystyle ker( T)$, and use the basis vectors to construct our matricies $\displaystyle A$ and $\displaystyle B$ such that $\displaystyle ( T_{2} \circ T_{1})( A) =( T_{2} \circ T_{1})( B)$
+  \begin{equation*}
+    \begin{aligned}
+      ( T_{2} \circ T_{1}) & =\begin{bmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 1 \\
+        1 & 1 & 0 & 0
+      \end{bmatrix} ;\ rref(( T_{2} \circ T_{1})) =\begin{bmatrix}
+        1 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 1 \\
+        0 & 0 & 0 & 0
+      \end{bmatrix}
+    \end{aligned}
+  \end{equation*}
+  So a basis for $\displaystyle ker( T)$ is $\displaystyle \left\{\begin{bmatrix}
+      -1 & 1 & 0 & 0
+    \end{bmatrix}^{T} ,\ \begin{bmatrix}
+      0 & 0 & -1 & 1
+    \end{bmatrix}^{T}\right\}$. Thus any matricies with bases $\displaystyle \left\{b\begin{bmatrix}
+      -1 & 1 \\
+      0  & 0
+    \end{bmatrix} ,\ d\begin{bmatrix}
+      0  & 0 \\
+      -1 & 1
+    \end{bmatrix}\right\}$ satisfy our problem. So let $\displaystyle A=\begin{bmatrix}
+      -1 & 1 \\
+      -2 & 2
+    \end{bmatrix}$ and $\displaystyle B=\begin{bmatrix}
+      -2 & 2 \\
+      -1 & 1
+    \end{bmatrix}$,
+  \begin{equation*}
+    \begin{aligned}
+      ( T_{2} \circ T_{1})( A) & =( -1+1,\ -2+2,\ -1+1) \\
+                               & =( 0,\ 0,\ 0)          \\
+      ( T_{2} \circ T_{1})( B) & =( -2+2,\ -1+1,\ -2+2) \\
+                               & =( 0,\ 0,\ 0)
+    \end{aligned}
+  \end{equation*}
+  $\displaystyle \therefore ( T_{2} \circ T_{1})( A) =( T_{2} \circ T_{1})( B)$
 \end{proof}
-
 % %%%%%%%
 % Problem 
 % 2.c
 % %%%%%%%
-\subsection{Show that $T_{2} \circ T_{1}$ is not onto by finding a vector $(a,b,c) \in \mathbb{R}^3$ that is not in the range $T_{2} \circ T_{1}(A)=T_{2} \circ T_{1}(B)$}
-
-\begin{equation*}
-  \boxed{ Solution:}
-\end{equation*}
+\subsection{Show that $T_{2} \circ T_{1}$ is not onto by finding a vector $(a,b,c) \in \mathbb{R}^3$ that is not in the range $T_{2} \circ T_{1}$}
+\boxed{Solution: (1, 2, 3)^{T}}
 \begin{proof}
+  Since $\displaystyle ( T_{2} \circ T_{1}) =( a+b,\ c+d,\ a+b)$ any vector $\displaystyle \vec{v} =( a,\ b,\ c)^{T} :\ a\neq c$ is not in the range of $\displaystyle ( T_{2} \circ T_{1})$, to show this take the vector $\displaystyle \vec{v} =( 1,\ 2,\ 3)^{T}$ and construct the augmented matrix
+  \begin{equation*}
+    A=\begin{bmatrix}
+      1 & 1 & 0 & 0 & \bigm| & 1 \\
+      0 & 0 & 1 & 1 & \bigm| & 2 \\
+      1 & 1 & 0 & 0 & \bigm| & 3
+    \end{bmatrix} ;\ rref( A) =\begin{bmatrix}
+      1 & 1 & 0 & 0 & \bigm| & 0 \\
+      0 & 0 & 1 & 1 & \bigm| & 0 \\
+      0 & 0 & 0 & 0 & \bigm| & 1
+    \end{bmatrix}
+  \end{equation*}
+  Clearly this has no solutions because $\displaystyle 0\neq 1$, therefore $\displaystyle ( T_{2} \circ T_{1})$ is not onto.
 \end{proof}
 \end{document}
