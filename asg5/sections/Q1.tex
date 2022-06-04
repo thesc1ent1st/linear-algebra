@@ -9,7 +9,15 @@
 \subsection{dim($V$) = 5, dim($W$) = 7, and $T$ is one-to-one.}
 \boxed{Solution: rank(T)=5\ nullity(T)=0}
 \begin{proof}
-        Since $T$ is one-to-one, $T$ maps every vector $\displaystyle \vec{v} \in V$ into the image under $T$ of the vectors in $V$ so it must have the property $rank(T)=dim(image(T))=5$ because $rank(T)+nullity(T)=dim(V)$ we have $rank(T)=5$ and $nullity(T)=0$.
+        Since $T$ is one-to-one, $T$ maps every vector $\displaystyle \vec{v} \in V$ into the image under $T$ of the vectors in $V$. So, $V$ must have the property
+        $$
+                rank(T)=dim(image(T))=5
+        $$
+        but,
+        $$
+                rank(T)+nullity(T)=dim(V)
+        $$
+        Thus, $rank(T)=5$ and $nullity(T)=0$
 \end{proof}
 
 % %%%%%%%
@@ -19,16 +27,23 @@
 \subsection{dim($W$) = 4, and $T$ is both one-to-one and onto.}
 \boxed{Solution:rank(T)=4\ nullity(T)=0}
 \begin{proof}
-        Since $\displaystyle T$ is both one-to-one and onto $\displaystyle rank( T) =dim( W) =dim( V) =4$ and $\displaystyle nullity( T) =0$.
+        Since $\displaystyle T$ is both one-to-one and onto
+        \begin{align*}
+                \displaystyle rank( T)               & =dim( W) =dim( V) =4 \\
+                \rightarrow\displaystyle nullity( T) & =0.
+        \end{align*}
 \end{proof}
 % %%%%%%%
 % Problem 
 % 1.c
 % %%%%%%%
 \subsection{dim($V$) = 5, dim($W$) = 3, and $T$ is onto.}
-\boxed{Solution: rank(T)=3\ nullity(T)=0}
+\boxed{Solution: rank(T)=3\ nullity(T)=2}
 \begin{proof}
-        Since $\displaystyle T$ is onto $\displaystyle rank( T) =dim( W) =3$ and $\displaystyle ker( T) =0$.
+        Since $\displaystyle T$ is onto, and $dim( W) + ket( T) = dim( V)$
+        \begin{align*}
+                \displaystyle rank( T) = dim( W) = 3 \land \displaystyle ker( T) =2
+        \end{align*}
 \end{proof}
 % %%%%%%%
 % Problem 
@@ -41,7 +56,7 @@ $$ {A = \begin{bmatrix}
                                 0 & -1 & 0 & -1
                         \end{bmatrix}}
 $$
-\boxed{Solution:rank(T) =2\ nullity(T) =1}
+\boxed{Solution:rank(T) =2\ nullity(T) =2}
 \begin{proof}
         \begin{equation*}
                 A=\begin{bmatrix}
@@ -54,6 +69,6 @@ $$
                         0 & 0 & 0 & 0
                 \end{bmatrix}
         \end{equation*}
-        The columns of $\displaystyle rref( A)$ have $\displaystyle 2$ leading values of 1, this tells us $\displaystyle rank( T) =2$ and $\displaystyle nullity( T) =1$.
+        The columns of $\displaystyle rref( A)$ have $\displaystyle 2$ leading values of 1, this tells us $\displaystyle rank( T) =2$ and $\displaystyle nullity( T) =2$.
 \end{proof}
 \end{document}

@@ -2,9 +2,43 @@
 \begin{document}
 
 \section[Bonus Problem]{Prove that for any linear transformation $T:V \to W$, if $\tilde{T}: {\rm ker}(T)^{\perp} \to {\rm Range}(T)$ is the restriction of $T$, then $\tilde{T}$ is an isomorphism. }
-\begin{equation*}
-        \boxed{ Solutions:}
-\end{equation*}
 \begin{proof}
+        Let $\displaystyle A_{( mxn)}$ be a matrix, and define $\displaystyle T:V\rightarrow W$ by $\displaystyle T(\vec{v}) =A\vec{v}$\\
+        Then,
+        \begin{align*}
+                Range( T) & =Im( T) =col( A)                                                                                     \\
+                rank( T)  & =dim( \ Im( T) \ ) =dim( \ col( A) \ ) =dim\ ( \ row( A) \ ) \ =rank( A)                             \\
+                ker( T)   & =\left\{\vec{v} \in R^{n} |T(\vec{v}) =\vec{0}\right\} =\{\vec{v} \ |\ A\vec{v} =\vec{0}\} =null( A)
+        \end{align*}
+        Since $\displaystyle A$ is (m x n), the null space of $\displaystyle A$ and the row space of $\displaystyle A$ are orthogonal complements in $\displaystyle \mathbb{R}^{n}$.
+        \begin{equation*}
+                \tilde{T} :ker( T)^{\perp }\rightarrow Range( T) =\tilde{T} :row( A)\rightarrow col( A)
+        \end{equation*}
+        Take,
+        \begin{equation*}
+                B=\left\{\begin{bmatrix}
+                        1      \\
+                        0      \\
+                        0      \\
+                        \vdots \\
+                        0
+                \end{bmatrix} ,\begin{bmatrix}
+                        0      \\
+                        1      \\
+                        0      \\
+                        \vdots \\
+                        0
+                \end{bmatrix} ,\dotsc ,\ \begin{bmatrix}
+                        0      \\
+                        0      \\
+                        0      \\
+                        \vdots \\
+                        1
+                \end{bmatrix}\right\} =\{\vec{e}_{1} ,\ \vec{e}_{2} ,\ ...\ ,\vec{e}_{n}\} ;\ a\ basis\ for\ \mathbb{R}^{n}
+        \end{equation*}
+        \begin{align*}
+                \Longrightarrow \left\{\tilde{T}(\vec{e}_{1}) ,\ \tilde{T}(\vec{e}_{2}) ,\ \dotsc ,\ \tilde{T}(\vec{e}_{n})\right\} & \ spans\ Range( T)
+        \end{align*}
+        $\displaystyle \therefore \tilde{T}( e_{j}) =A\vec{e}_{j} =$ The $\displaystyle j'th$ column of $\displaystyle A$. So, $\displaystyle \tilde{T} :ker( T)^{\perp }\rightarrow Range( T)$ is one-to-one, and onto which means it's an isomorphism.
 \end{proof}
 \end{document}
